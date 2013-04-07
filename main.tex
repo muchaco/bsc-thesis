@@ -13,10 +13,13 @@
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{latexsym}
 \usepackage{todonotes}
+\usepackage{verbatim}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 \reversemarginpar
 \setlength{\marginparwidth}{2.5cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0cm}
 
 \newtheorem{Tet}{Tétel}[section]
 \newtheorem{Lem}[Tet]{Lemma}
@@ -41,9 +44,9 @@
 \newcommand{\todored}[1]{\todo[color=red!70, size=\footnotesize]{#1}}
 \newcommand{\todoor}[1]{\todo[color=orange!90, size=\footnotesize]{#1}}
 
+\title{Szakdolgozat}
+
 \begin{document}
-
-
 
 
 % Első három oldal:
@@ -52,7 +55,7 @@
 
 	\thispagestyle{empty}
 	\begin{center}
-		{\large \noun{Eötvös Lóránd Tudományegyetem \\ Természettudományi Kar} }
+		{\large \noun{Eötvös Loránd Tudományegyetem \\ Természettudományi Kar} }
 		\line(1,0){455}
 		\vspace{80pt}
 		{\Huge \noun{\textbf{Véletlen iterációk statisztikai elemzése}}}
@@ -72,43 +75,55 @@
 
 
 
-%%=========================================================================================
-%%========================== szakdolgozat tartalmi része ==================================
-%%=========================================================================================
+%%============================================================================
+%%========================== szakdolgozat tartalmi része =====================
+%%============================================================================
 
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%				1. FEJEZET
-	%				BEVEZETÉS
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%=======================================================
+%
+%				1. FEJEZET
+%				BEVEZETÉS
+%
+%=======================================================
 
 	\chapter{Bevezetés}
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%				2. FEJEZET
-	%				A NEWTON-MÓDSZER
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%=======================================================
+%
+%				2. FEJEZET
+%				A NEWTON-MÓDSZER
+%
+%=======================================================
+
+
 	
 	\chapter{A Newton-módszer}
     
     
-    	%
-        %	2.1 módszer leírása
-        %
+    %=======================================================
+    %
+    %				2. FEJEZET
+    %				A NEWTON-MÓDSZER
+    %					|
+    %					->	2.1 A módszer leírása
+    %
+    %=======================================================
         
         
 		\section{A módszer leírása}
         	\todoor{Változtatás: A bevezető szövegben egy kis átírás. Nekem kevésbé tűnik eröltetettnek.}
-			A Newton-módszer, mint a neve is mutatja, először Isaac Newton dolgozta ki, azonban a mai formáját Joseph Raphson írta le 1690-ben %Raphson, J. Analysis aequationum universalis. London, 1690. 
-            , ezért Newton-Raphson-módszernek is hívják. Newton a módszert eredetileg polinomokra alkalmazta, ahogy a későbbiekben majd én is teszem.\\ A Newton-módszer egy iterációs eljárás nemlineáris egyenletek gyökeinek megtalálására, közelítésére. A módszer - valós esetben - egy geometriailag nagyon egyszerű meggondoláson alapul, amit egy kép segítségével fogok bemutatni.
+			A Newton-módszer, mint a neve is mutatja, először Isaac Newton dolgozta ki, azonban a mai formáját Joseph Raphson írta le 1690-ben, ezért Newton-Raphson-módszernek is hívják. Newton a módszert eredetileg polinomokra alkalmazta, ahogy a későbbiekben majd én is teszem. A Newton-módszer egy iterációs eljárás nemlineáris egyenletek gyökeinek megtalálására, közelítésére. A módszer - valós esetben - egy geometriailag nagyon egyszerű meggondoláson alapul, amit egy kép segítségével fogok bemutatni.
 			\begin{figure}[htp]
 				\centering
-				\includegraphics[scale=0.5]{kep1.png}
+				\includegraphics[scale=0.55]{kep1.png}
 				\caption{Egy lépés a Newton-módszerrel}\label{k1}
 			\end{figure}
-			Első lépésként vegyünk egy kezdőpontot az $x$ tengelyen, amely elég közel van a gyökünkhöz. Jelöljük $x_0$-lal. Tegyük fel, hogy $n$ lépés után eljutottunk az $x_n$ pontig. Húzzunk érintőt a grafikonhoz ebben a pontban. Az érintő és az $x$ tengely metszéspontja legyen a következő pontunk, $x_{n+1}$, majd így folytassuk amíg elég közel nem kerülünk a egyenletünk gyökéhez.
-			\\ Tegyük fel, hogy $x_k$ közel van az $f(x)=0$ egyenlet $x^*$ gyökéhez, és $f$ kétszer folytonosan differenciálható. \todoor{Változtatás: következő mondat a Tanár úr megjegyzése alapján} Ekkor felírhatjuk $f$ Taylor-sorát maradéktaggal a következőképpen
+			Első lépésként vegyünk egy kezdőpontot az $x$ tengelyen, amely elég közel van a gyökünkhöz. Jelöljük $x_0$-lal. Tegyük fel, hogy $n$ lépés után eljutottunk az $x_n$ pontig. Húzzunk érintőt a grafikonhoz ebben a pontban. Az érintő és az $x$ tengely metszéspontja legyen a következő pontunk, $x_{n+1}$, majd így folytassuk amíg elég közel nem kerülünk a egyenletünk gyökéhez. Tegyük fel, hogy $x_k$ közel van az $f(x)=0$ egyenlet $x^*$ gyökéhez, és $f$ kétszer folytonosan differenciálható. \todoor{Változtatás: következő mondat a Tanár úr megjegyzése alapján} Ekkor felírhatjuk $f$ Taylor-sorát maradéktaggal a következőképpen
 			\[ f(x^*)=f(x_k)+f'(x_k)(x^*-x_{k})+O((x^*-x_{k})^2) \]
 			$f(x^*)$ lineáris közelítéséhez nincsen szükségünk az $(x^*-x_{k})^2$-es tagokra.
 			\begin{eqnarray*}
@@ -123,39 +138,43 @@
 			\begin{Pl}
 				Az alábbiakban a \ref{k1} képen ábrázolt polinommal fogok számolni.
 				\[f(x)=x^3+6.5x^2+5x-12.5\]
-				$f(x)=0$ egyenletnek gyöke az $x^*=2.5$. Induljunk el az $x_0=-1$ pontból.
-				\begin{center}				
-					\begin{tabular}{|c|c|c|c|c|c|}
-						\hline
-						$k$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
-						\hline
-						$x_k$ & $-1$ & $-3.4$ & $-1.9982$ & $-2.5001$ & $-2.5$ \\
-						\hline
-						$f(x_k)$ & $-12$ & $6.336$ & $-4.5159$ & $8.6664\cdot 10^{-4}$ & $-9.8121\cdot 10^{-9}$ \\
-						\hline
-						$|x_k-x^*|$ & $1.5$ & $0.9$ & $0.5018$ & $9.9045\cdot 10^{-5}$ & $1.1214\cdot 10^{-9}$ \\
-						\hline
-					\end{tabular}
+				$f(x)=0$ egyenletnek gyöke az $x^*=-2.5$. Induljunk el az $x_0=-1$ pontból.\todoor{Változás: Átalakítottam a táblázatot, mert a 3. fejezetben egy példa nem fért el vízszintesen, és szeretném, ha egységes lenne a példák kinézete}
+                \begin{center}				
+                  \begin{tabular}{|r|r|r|r|}
+                      \hline
+                      $k$ & $x_k$     & $f(x_k)$      & $|x_k-x^*|$  \\ \hline
+                      $0$ & $-1.0000$ & $-1.2000e+01$ & $1.5000e+00$ \\ 
+                      $1$ & $-3.4000$ & $6.3360e+00$  & $9.0000e-01$ \\ 
+                      $2$ & $-1.9982$ & $-4.5159e+00$ & $5.0177e-01$ \\ 
+                      $3$ & $-2.5001$ & $8.6664e-04$  & $9.9045e-05$ \\ 
+                      $4$ & $-2.5000$ & $-9.8121e-09$ & $1.1214e-09$ \\
+                      \hline
+                  \end{tabular}
 				\end{center}
             \end{Pl}
-            \todoor{Megjegyzés: Nem tudom, hogy a táblázatban hogyan tüntessem fel, hogy a negyedik lépésnél $x_k\approx-2.5$, de nem egyenlő, különben a másik két sor értékei hibásak. Sajnos a pontos érték nem fér ki a táblázatba.}
+            
     	
-        
-        %
-        %	2.2 konvrgencia vizsgálat
-        %
+            
+    %=======================================================
+    %
+    %				2. FEJEZET
+    %				A NEWTON-MÓDSZER
+    %					|
+    %					->	2.2 Konvergencia vizsgálat
+    %
+    %=======================================================
         
         
 		\section{Konvergencia vizsgálat}
-			\todoor{Változtatás: A jelölés részt előrrébb hoztam, hogy a tételt precízebben ki tudjam mondani, és $m_1$, $M_2$ definícióit a Tanár úr megjegyzése alapján átírtam.}
-            \begin{Jel}
-				$m_1:=\smash{\displaystyle \min_{x \in [x_k,x^*]}} |f'(x)|$, $M_2:=\smash{\displaystyle \max_{x\in [x_k,x^*]}} |f''(x)|$, $C:=\frac{M_2}{2m_1}$
+			\begin{Jel}
+				\todoor{Változtatás: A jelölés részt előrrébb hoztam, hogy a tételt precízebben ki tudjam mondani, és $m_1$, $M_2$ definícióit a Tanár úr megjegyzése alapján átírtam.}$m_1:=\smash{\displaystyle \min_{x \in [x_k,x^*]}} |f'(x)|$, $M_2:=\smash{\displaystyle \max_{x\in [x_k,x^*]}} |f''(x)|$, $C:=\frac{M_2}{2m_1}$
 			\end{Jel}
 			\begin{Tet}
-			\label{t2} Tegyük fel, hogy $f\in C^2[a,b]$, és egyértelműen létezik $x^*\in [a,b]$ amelyre $f(x^*)=0$, továbbá $m_1>0$, és $M_2<\infty$. Ekkor, ha a Newton-módszer konvergens, akkor másodrendben konvergál a gyökhöz.
+			\label{t2} Tegyük fel, hogy $f\in C^2[a,b]$, és egyértelműen létezik $x^*\in [a,b]$ amelyre $f(x^*)=0$, továbbá $m_1>0$. \todoor{Változás: töröltem $M_2$-s feltételt}Ekkor, ha a Newton-módszer konvergens, akkor másodrendben konvergál a gyökhöz.
 			\end{Tet}
 			\begin{Biz}
-				Fejtsük $f(x^*)$-ot Taylor-sorba $x_k$ körül, és írjuk ki a Lagrange-féle maradéktagot 
+				Írjuk fel $f$ $x_k$ körüli másodfokú polinomját Lagrange maradéktaggal az $x^*$ pontban 
+                \todoor{Változás: átírtam az első mondatot} 
 				\begin{eqnarray}
 					f(x^*)&=&f(x_k)+f'(x_k)(x^*-x_{k})+\frac{f''(\xi)}{2}(x^*-x_{k})^2 \\
 					0&=&\frac{f(x_k)}{f'(x_k)}+(x^*-x_{k})+\frac{\frac{f''(\xi)}{2}(x^*-x_{k})^2}{f'(x_k)}\\
@@ -170,9 +189,11 @@
 				\begin{equation}
 					\label{e3}|x_{k+1}-x^*|\leq C |x^*-x_k|^2
 				\end{equation}
-				Ez azt jelenti, hogyha a Newton-módszer konvergens, akkor másodrendben konvergál.
+				Vagyis hogyha a Newton-módszer konvergens, akkor másodrendben konvergál.
 			\end{Biz}
 			
+            \todoor{Változás: Ezt újonnan írtam bele} A másodrendű konvergencia azt jelenti, hogy a hiba legalább négyzetesen csökken, vagyis a helyes jegyek száma nagyjából megduplázódik a lépésenként.
+            
 			Hogyan tudjuk garantálni a konvergenciát? \todoor{Változtatás: Tanár úr megjegyzése alapján a következő mondat} \ref{e3} egyenlőtlenséget a következőképpen tudjuk iterálni $x^*$ közelében
 			\begin{eqnarray}
 				|x_k-x^*|&\leq& C |x^*-x_{k-1}|^2\\
@@ -238,9 +259,14 @@
 			\end{Biz}
             
             
-    	%
-        %	2.3 Leállási feltétel
-        %
+    %=======================================================
+    %
+    %				2. FEJEZET
+    %				A NEWTON-MÓDSZER
+    %					|
+    %					->	2.3 Leállási feltétel
+    %
+    %=======================================================
             
             
 		\section{Leállási feltétel}
@@ -279,50 +305,52 @@
 			Sajnos ez a leállási feltétel nem túl hasznos, hiszen minden lépésnél újabb $\varepsilon$-t kell keresnünk, ami műveletigényes.
 
 
+    %=======================================================
+    %
+    %				2. FEJEZET
+    %				A NEWTON-MÓDSZER
+    %					|
+    %					->	2.4 Komplex eset
+    %
+    %=======================================================
 
-    	%
-        %	2.4 Komplex eset
-        %
 
 		\section{Komplex eset}
-			Érdemes megvizsgálni a módszert komplex gyökkel rendelkező egyenletekre is. Ekkor a fentiekkel analóg állítások mondhatók ki. A komplex eset geometriai meggondolása is hasonló. $z=x+yi\in \mathbb{C}$. Vegyük a $|f(z)|$ függvényt. Ekkor $z_{k+1}$ az a $z_k$-hoz legközelebbi pont amely a komplex sík és az $|f(z)|$ függvény $z_k$ pontban vett érintő síkja metszésvonalán helyezkedik el (\ref{k6}). Meggondolható, hogy ez valós esetben ugyanazt jelenti mint eddig, hiszen a két sík metszésvonala helyett, az x tengely és az érintő egyenes metszéspontját vesszük. A lépés iránya ezáltal ellentétes $|f(z)|$ gradiensével a $z_k$ pontban. \cite{Yau98}
+            Érdemes megvizsgálni a módszert komplex gyökkel rendelkező egyenletekre is. Ekkor a fentiekkel analóg állítások mondhatók ki. A komplex eset geometriai meggondolása is hasonló. Feleltessük meg a $z=x+yi \in \mathbb{C}$ számokat $(x,y)\in\mathbb{R}^2$ vektorokkal. Legyen $f(z)=u+vi=u(x,y)+v(x,y)i$ analitikus függvény. $|f(z)|=\sqrt{u^2(x,y)+v^2(x,y)}$. $z_k=x_k+y_ki$ ahol $f$, és $f'$ sem 0. Legyen $T_k$ $|f(z)|$ érintő síjka a $(x_k,y_k)$ helyen, és legyen $L_k$ az $xy$ sík és $T_k$ metszésvonala. Ekkor \[z_{k+1}=x_{k+1}+y_{k+1}i=z_k-\frac{f(z_k)}{f'(z_k)}\] megfelel annak az $(x_{k+1},y_{k+1})$ pontnak amelyik az $L_k$ egyenesen legközelebb van $(x_k,y_k)$ ponthoz. (\ref{k6}) \cite[p. 809]{Yau98}. Meggondolható, hogy ez valós esetben ugyanazt jelenti mint eddig, hiszen a két sík metszésvonala helyett, az x tengely és az érintő egyenes metszéspontját vesszük. A lépés iránya ezáltal ellentétes $|f(z)|$ gradiensével a $z_k$ pontban.
             \begin{figure}[htp]
 				\begin{center}
-				\includegraphics[scale=0.6]{kep6.png}
-				\caption{A komplex eset geometriai meggondolása \cite{Yau98}} \label{k6}
+				\includegraphics[scale=0.7]{kep6.png}
+				\caption{A komplex eset geometriai meggondolása \cite[p. 807]{Yau98}} \label{k6}
 				\end{center}
 			\end{figure}
             
-            Vegyük például a $f(x)=x^2-2i$ komplex együtthatós polinomot, amelynek az $1+i$ és a $-1-i$ a gyökei. A gradiensnél (\ref{k7}) valamivel jobb szemléltetés végett definiáljuk a következő vektormezőt
+            Vegyük például a $f(x)=x^2-2i$ komplex együtthatós polinomot, amelynek az $1+i$ és a $-1-i$ a gyökei. A gradiensnél (\ref{k7} ábra) valamivel jobb szemléltetés végett definiáljuk a következő vektormezőt
 			\[g(x,y)=\left(\mathrm{Re} \left\{ -\frac{f(x+yi)}{f'(x+yi)} \right \} ,\mathrm{Im} \left\{-\frac{f(x+yi)}{f'(x+yi)}\right \} \right)\]
-			
-			Ezt ábrázolva láthatjuk, hogy az esetünkben hogyan fog haladni a komplex síkon a módszer. A \ref{k4} ábrán jelöltem $1-0.5i$-ből indított módszer pontjait is. A kezdőpont pirossal van ábrázolva, ami az iterációs lépésekkel átvált sárgába.
-			
-            \begin{figure}[htp]
-           		\hfill
-           		\subfigure[$-\operatorname{grad}\,|f(z)|$ szintvonalai]{\includegraphics[scale=0.5]{kep7.png} \label{k7}}
-           		\hfill
-            	\subfigure[$g(x,y)$ és négy iterációs lépés az $1-0.5i$-ből]{\includegraphics[scale=0.5]{kep4.png} \label{k4}}
-            	\hfill
-           	 	\caption{A komplex eset szemléltetése} 
+            Ezt ábrázolva láthatjuk, hogy az esetünkben hogyan fog haladni a komplex síkon a módszer. A \ref{k4} ábrákon jelöltem $1-0.5i$-ből indított módszer pontjait is. A kezdőpont pirossal van ábrázolva, ami az iterációs lépésekkel átvált sárgába.
+			\begin{figure}[htp!]
+           		\subfigure[$-\nabla|f(z)|$ és négy iterációs lépés az $1-0.5i$-ből]{\includegraphics[scale=0.5]{kep7.png} \label{k7}}
+                \hfill
+            	\subfigure[$g(x,y)$ és négy iterációs lépés az $1-0.5i$-ből]{\includegraphics[scale=0.5]{kep4.png}}
+           	 	\caption{A lépés irányán túl a (b) ábra a lépés nagyságát is szemlélteti} \label{k4}
            	\end{figure}
             \begin{Pl}
-				\ref{k4} számokkal
+				\ref{k4} ábra számokkal, vagyis $f(x)=x^2-2i$ gyökét keressük $1-0.5i$ kezdőponttal.
 				\begin{center}				
-					\begin{tabular}{|c|c|c|c|c|c|}
-						\hline
-						$k$ & $0$ & $1$ & $2$ & $4$ & $4$ \\
-						\hline
-						$z_k$ & $1-0.5i$ & $0.1+0.55i$ & $0.81+0.595i$ & $1.069+0.796i$ & $0.983+i$ \\
-						\hline
-						$|f(z_k)|$ & $3.092$ & $1.912$ & $2.926$ & $0.59$ & $0.049$ \\
-						\hline
-						$|z_k-z^*|$ & $1.5$ & $1.006$ & $0.906$ & $0.215$ & $0.017$ \\
-						\hline
-					\end{tabular}
+                    \begin{tabular}{|r|r|r|r|}
+                        \hline
+                        $k$ & $z_k$                & $|f(z_k)|$    & $|z_k-z^*|$  \\ \hline
+                        $0$ & $1.00000 - 0.50000i$ & $3.0923e+00$  & $1.5000e+00$ \\ 
+                        $1$ & $0.10000 + 0.55000i$ & $ 1.9125e+00$ & $1.0062e+00$ \\ 
+                        $2$ & $1.81000 + 0.59500i$ & $2.9261e+00$  & $9.0561e-01$ \\ 
+                        $3$ & $1.06891 + 0.79611i$ & $5.8966e-01$  & $2.1522e-01$ \\ 
+                        $4$ & $0.98262 + 0.99980i$ & $4.8935e-02$  & $1.7377e-02$ \\ 
+                        $5$ & $1.00008 + 0.99992i$ & $3.0464e-04$  & $1.0771e-04$ \\ 
+                        $6$ & $1.00000 + 1.00000i$ & $1.1601e-08$  & $4.1015e-09$ \\
+                        \hline
+                    \end{tabular}
 				\end{center}
             \end{Pl}
-			Láthatjuk, a módszer nem csak komplex gyökökkel rendelkező valós polinomokra működik, de komplex együtthatós polinomokra is. Azonban ha egy valós polinom komplex gyökét szeretnénk meghatározni, akkor szükséges, hogy a kezdőpontunk képzetes része eltérjen nullától, különben az iterációs lépés tulajdonásága miatt $\forall z_k\in \mathbb{R}$.
+			Láthatjuk, a módszer nem csak komplex gyökökkel rendelkező valós polinomokra működik, de komplex együtthatós polinomokra is. Azonban ha egy valós polinom komplex gyökét szeretnénk meghatározni, akkor szükséges, hogy a kezdőpontunk képzetes része eltérjen nullától, különben az iterációs lépés tulajdonásága miatt $\forall z_k\in \mathbb{R}$ (\ref{k5} ábra).
             
             \begin{figure}[htp]
 				\begin{center}
@@ -334,16 +362,32 @@
 
 
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%				3. FEJEZET
-	%				MÓDOSÍTOTT MÓDSZER POLINOMOKRA
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%=======================================================
+%
+%				3. FEJEZET
+%				MÓDOSÍTOTT MÓDSZER POLINOMOKRA
+%
+%=======================================================
     
     
     
 	\chapter{Módosított módszer polinomokra}
-    \todoor{Megjegyzés: Ez a fejezet még csak vázlat. Egyenlőre próbáltam összeírni valamilyen motivációt ami miatt módosítjuk a Newton-módszert.}
+    	\todoor{Megjegyzés: Ez a fejezet még csak vázlat. Egyenlőre próbáltam összeírni valamilyen motivációt ami miatt módosítjuk a Newton-módszert.}
 		Adott a Newton-módszer, amit az előző fejezetben vizsgáltunk. Tudjuk, hogyha az $x_k$ sorozat konvergens, akkor másodrendben konvergál a gyökhöz (\ref{t2}), sőt bizonyos feltételeket biztosítva monoton konvergenciát tudtunk biztosítani (\ref{t1}). Azonban sok esetben a módszer nem konvergens. Szeretnénk egy olyan módszert, amely viszonylag gyorsan és sok helyről konvergens.
+  
+      
+      
+    %=======================================================
+    %
+    %				3. FEJEZET
+    %				MÓDOSÍTOTT MÓDSZER POLINOMOKRA
+    %					|
+    %					->	3.1 Motiváció
+    %
+    %=======================================================
+      
+      
+      
 		\section{Motiváció}
 						Vizsgáljuk meg, hogy egy polinom hogyan viselkedik a \ref{t1} tétel alapján, vagyis honnan indulva garantált a monoton konvergencia.
 			\begin{figure}[htp]
@@ -351,31 +395,78 @@
 				\includegraphics[scale=0.6]{kep2.png}
 				\caption{Egy polinom felosztása az első és második deriváltjának viselkedése alapján}\label{k2}
 			\end{figure}
-			A tétel feltételei alapján a kezdőpontunk és a gyök közötti intervallumon sem a függvény deriváltja, sem a második deriváltja nem lehet nulla. Ez négy lehetőséget ad melyet a \ref{k2} ábrán szemléltettem. Mint az ábrán is látható előfordulhat olyan eset amikor egy ilyen intervallumon nincsen gyöke a polinomnak. Azonban amelyik intervallumon van, ott vagy a gyök előtti, vagy utáni részről véve a kezdőpontunkat a feltételek teljesülnek.
+			A tétel feltételei alapján a kezdőpontunk és a gyök közötti intervallumon sem a függvény deriváltja, sem a második deriváltja nem lehet nulla. Ez négy lehetőséget ad melyet a \ref{k2} ábrán szemléltettem. Mint az ábrán is látható előfordulhat olyan eset, amikor egy ilyen intervallumon nincsen gyöke a polinomnak. Azonban amelyik intervallumon van, ott vagy a gyök előtti, vagy utáni részről véve a kezdőpontunkat a feltételek teljesülnek.
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[scale=0.6]{kep3.png}
 				\caption{Megfelelő intervallumok a kezdőpont választáshoz \ref{t1} tétel alapján}\label{k3}
 			\end{figure}
-			Láthatjuk, hogy esetünkben a kezdőpontunknak alkalmas intervallum majdnem lefedi a számegyenest, pont a gyökök közelében kimaradnak kisebb részek, és bár monoton és másodrendű konvergencia garantált például a két szélső intervallumban, ha távolról indulunk, előfordulhat hogy lassú lesz a módszer. További gondot jelenthet, ha a polinomnak komplex gyökei is vannak. 
+			Láthatjuk, hogy esetünkben a kezdőpontunknak alkalmas intervallum majdnem lefedi a számegyenest, de pont a gyökök közelében kimaradnak kisebb részek, és bár monoton és másodrendű konvergencia garantált például a két szélső intervallumban, ha távolról indulunk, előfordulhat hogy lassú lesz a módszer.
 			
 			Ha egy polinomot leosztunk egy másik polinommal, és a két polinomnak nem egyezik meg valamelyik gyöke, akkor egy olyan függvényt kapunk amelynek a gyökei megegyeznek az eredeti polinomunkéval. Ugyanis legyen $p_1(x)$ a polinomunk amelyiknek a gyökeit keressük, és osszuk le $p_2(x)$ polinommal. Legyen $x^*$ gyöke $p_1(x)$-nek. Ekkor
 			\[ \frac{p_1(x^*)}{p_2(x^*)}=\frac{0}{p_2(x^*)}=0\]
 			
 			Felvetődik tehát az ötlet, hogy hajtsuk végre a Newton-módszert a $\frac{p_1(x)}{p_2(x)}$ egyenlet gyökeinek keresésére. Vegyük azt a speciális esetet amikor $p_2(x)=p_1'(x)$. Ha $p_1(x)$-nek nincs többszörös gyöke, akkor a módosított egyenletünknek ugyanazok a gyökei.
 			\begin{figure}[htp]
-           		\hfill
            		\subfigure[Egy polinom és a módosított egyenlete]{\includegraphics[scale=0.5]{sage8.png} \label{k8}}
            		\hfill
             	\subfigure[Megfelelő intervallumok a kezdőpont választáshoz \ref{t1} tétel alapján]{\includegraphics[scale=0.5]{sage9.png} \label{k9}}
-            	\hfill
                 \caption{}
            	\end{figure}
+            
+    
+
+    %=======================================================
+    %
+    %				3. FEJEZET
+    %				MÓDOSÍTOTT MÓDSZER POLINOMOKRA
+    %					|
+    %					->	3.2 A módszer
+    %
+    %=======================================================
+        
+            
+            \section{A módszer}
+            
+            Ahogyan a \ref{k9} ábrán látható a két egyenlet konvergenciát garantáló intervallumai jól kiegészítik egymást. Ez alapján az az ötletünk támadhat, hogyha véletlenszerűen váltogatjuk az egyenletet amire a módszert alkalmazzuk, jó eséllyel eljutunk az egyenletünk valamelyik gyökéhez.
 			
-            Ahogyan \ref{k9}-en látható
+			Tehát adott $p$ polinom amelynek a gyökeit keressük. Ekkor vegyük azt az iterációt aminek egy lépését $0.5$ valószínűséggel a (\ref{e9}) iterációval tesszük, és $0.5$ valószínűséggel (\ref{e10}) iterációval. 
+			
+			\begin{eqnarray}
+				\label{e9}x_{k+1}&=&x_k- \frac{p(x_k)}{p'(x_k)}\\
+				\label{e10}x_{k+1}&=&x_k-\frac{\frac{p(x_k)}{p'(x_k)}}{\left(\frac{p(x_k)}{p'(x_k)}\right)'}=x_k-\frac{p(x_k)p'(x_k)}{p'(x_k)^2-p''(x_k)p(x_k)}
+			\end{eqnarray}
+			
+            \begin{Pl} Az alábbiakban egy olyan harmadfokú polinomon végzem el az iterációt aminek az együtthatóit $-50$ és $50$ között véletlenszerűen generáltam.
+            	\[f(x)=-49.6776x^3+36.1231x^2-1.1662x-20.4780\]
+                \begin{center}
+                \begin{tabular}{|r|r|r|r|r|}
+               		\hline
+                	$k$ & lépés     & $x_k$                 & $|f(x_k)|$   & $|x_k-x^*|$  \\ \hline
+                	$0$ & -         & $1+i$                 & $8.2695e+01$ & $5.5794e-01$ \\ 
+                	$1$ & \ref{e9}  & $0.78752 + 0.72275i$  & $2.0696e+01$ & $2.0946e-01$ \\ 
+                	$2$ & \ref{e10} & $0.60295 + 0.54236i$  & $3.4869e+00$ & $4.9152e-02$ \\ 
+                	$3$ & \ref{e9}  & $0.64583 + 0.57250i$  & $2.7337e-01$ & $3.6089e-03$ \\ 
+                	$4$ & \ref{e10} & $0.64227 + 0.57184i $ & $1.3524e-03$ & $1.7911e-05$ \\ 
+                	$5$ & \ref{e9}  & $0.64228 + 0.57183i$  & $3.3361e-08$ & $4.4183e-10$ \\
+                	\hline
+                \end{tabular}
+                \end{center}
+                
+            \end{Pl}
+            	
+
+
+
+
+
+
 % irodalomjegyzék
 	\begin{thebibliography}{99}
-		\bibitem{Yau98} Lily Yau and Adi Ben-Israel ``The Newton and Halley Methods for Complex Roots", \emph{The American Mathematical Monthly} Vol. 105, No. 9, November 1998 % http://folk.uib.no/ssu029/Pdf_file/Yau98.pdf
+    	\bibitem{jr} E. T. Whittaker, G. Robinson, ``The Newton-Raphson Method'' \emph{The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed.}, New York: Dover, pp. 84-87, 1967. 
+		\bibitem{aa} Faragó István, \emph{Alkalmazott analízis 1}, előadás jegyzet 2012.
+        \bibitem{na} Faragó István, Horváth Róbert, ``Nemlineáris egyenletek és egyenletrendszerek megoldása'' \emph{Numerikus módszerek}, Typotex 2011.
+        \bibitem{Yau98} Lily Yau, Adi Ben-Israel ``The Newton and Halley Methods for Complex Roots'', \emph{The American Mathematical Monthly} Vol. 105, No. 9, November 1998. % http://folk.uib.no/ssu029/Pdf_file/Yau98.pdf
 
 	\end{thebibliography}
 \end{document}
