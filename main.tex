@@ -7,13 +7,13 @@
 \usepackage{indentfirst}
 \usepackage{anysize}
 \usepackage{graphicx}
-\usepackage{wrapfig}
 \usepackage{sidecap}
 \usepackage{subfigure}
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{latexsym}
 \usepackage{todonotes}
 \usepackage{verbatim}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 \reversemarginpar
@@ -34,13 +34,6 @@
 \newenvironment{Biz}{\noindent \textbf{Bizonyítás. }}{ $\square$}
 
 \newcommand{\noun}[1]{\textsc{#1}}
-\newcommand{\blankpage}{
-	\newpage
-	\setcounter{page}{1}
-	\thispagestyle{empty}
-	\mbox{}
-	\newpage
-}
 \newcommand{\todored}[1]{\todo[color=red!70, size=\footnotesize]{#1}}
 \newcommand{\todoor}[1]{\todo[color=orange!90, size=\footnotesize]{#1}}
 
@@ -49,7 +42,7 @@
 \begin{document}
 
 
-% Első három oldal:
+% Első két oldal:
 
 
 
@@ -65,19 +58,30 @@
 		\\Írta: Mészáros Ádám István\\ Matematika BSc, Matematikai elemző szakirány\\
 		\vspace{35pt}
 		Témavezető: Sigray István\\ Műszaki Gazdasági Tanár, Analízis tanszék\\
-		\vspace{80pt}
+		\vspace{100pt}
 		\includegraphics[scale=0.21]{elte.png}
 		\vspace{25pt}
 		\\ 2013\\ Budapest
 	\end{center}
-	\blankpage
 	\tableofcontents
-
+	\setcounter{page}{1}
 
 
 %%============================================================================
 %%========================== szakdolgozat tartalmi része =====================
 %%============================================================================
+
+%=======================================================
+%
+%				0. FEJEZET
+%				KÖSZÖNETNYILVÁNÍTÁS
+%
+%=======================================================
+
+
+	\chapter*{Köszönetnyilvánítás}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 %=======================================================
@@ -116,14 +120,14 @@
         
         
 		\section{A módszer leírása}
-        	\todoor{Változtatás: A bevezető szövegben egy kis átírás. Nekem kevésbé tűnik eröltetettnek.}
+        	
 			A Newton-módszer, mint a neve is mutatja, először Isaac Newton dolgozta ki, azonban a mai formáját Joseph Raphson írta le 1690-ben, ezért Newton-Raphson-módszernek is hívják. Newton a módszert eredetileg polinomokra alkalmazta, ahogy a későbbiekben majd én is teszem. A Newton-módszer egy iterációs eljárás nemlineáris egyenletek gyökeinek megtalálására, közelítésére. A módszer - valós esetben - egy geometriailag nagyon egyszerű meggondoláson alapul, amit egy kép segítségével fogok bemutatni.
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[scale=0.55]{kep1.png}
 				\caption{Egy lépés a Newton-módszerrel}\label{k1}
 			\end{figure}
-			Első lépésként vegyünk egy kezdőpontot az $x$ tengelyen, amely elég közel van a gyökünkhöz. Jelöljük $x_0$-lal. Tegyük fel, hogy $n$ lépés után eljutottunk az $x_n$ pontig. Húzzunk érintőt a grafikonhoz ebben a pontban. Az érintő és az $x$ tengely metszéspontja legyen a következő pontunk, $x_{n+1}$, majd így folytassuk amíg elég közel nem kerülünk a egyenletünk gyökéhez. Tegyük fel, hogy $x_k$ közel van az $f(x)=0$ egyenlet $x^*$ gyökéhez, és $f$ kétszer folytonosan differenciálható. \todoor{Változtatás: következő mondat a Tanár úr megjegyzése alapján} Ekkor felírhatjuk $f$ Taylor-sorát maradéktaggal a következőképpen
+			Első lépésként vegyünk egy kezdőpontot az $x$ tengelyen, amely elég közel van a gyökünkhöz. Jelöljük $x_0$-lal. Tegyük fel, hogy $n$ lépés után eljutottunk az $x_n$ pontig. Húzzunk érintőt a grafikonhoz ebben a pontban. Az érintő és az $x$ tengely metszéspontja legyen a következő pontunk, $x_{n+1}$, majd így folytassuk amíg elég közel nem kerülünk a egyenletünk gyökéhez. Tegyük fel, hogy $x_k$ közel van az $f(x)=0$ egyenlet $x^*$ gyökéhez, és $f$ kétszer folytonosan differenciálható. \todoor{Változtatás: következő mondat a Tanár úr megjegyzése alapján} Ekkor felírhatjuk $f$ elsőfokú Taylor-polinomját maradéktaggal a következőképpen
 			\[ f(x^*)=f(x_k)+f'(x_k)(x^*-x_{k})+O((x^*-x_{k})^2) \]
 			$f(x^*)$ lineáris közelítéséhez nincsen szükségünk az $(x^*-x_{k})^2$-es tagokra.
 			\begin{eqnarray*}
@@ -138,7 +142,7 @@
 			\begin{Pl}
 				Az alábbiakban a \ref{k1} képen ábrázolt polinommal fogok számolni.
 				\[f(x)=x^3+6.5x^2+5x-12.5\]
-				$f(x)=0$ egyenletnek gyöke az $x^*=-2.5$. Induljunk el az $x_0=-1$ pontból.\todoor{Változás: Átalakítottam a táblázatot, mert a 3. fejezetben egy példa nem fért el vízszintesen, és szeretném, ha egységes lenne a példák kinézete}
+				$f(x)=0$ egyenletnek gyöke az $x^*=-2.5$. Induljunk el az $x_0=-1$ pontból.
                 \begin{center}				
                   \begin{tabular}{|r|r|r|r|}
                       \hline
@@ -167,14 +171,18 @@
         
 		\section{Konvergencia vizsgálat}
 			\begin{Jel}
+            
+            \todored{javaslom a k\"ovetkez\H oket a fejezet elej\'ere: Legyen $[a,b]\subset{\mathbb R}$ egy 
+            intervallum, $f:[a,b]\to {\mathbb R}$ k'etszer folytonosan differenci'lhat\'o. E fejezet sor\'an azt viysg\'aljuk, hogy milyen esetben tudjuk garant\'alni azt, hogy a Newton iter\'aci\'o $f$ egy gz\"ok\'ehez konverg\'al.
+            
+            (Ezek ut\'an a fejezet t\'eteleibe) e felt\'etelt nem kell be\'\i rni, ugyanis hol szerepeltek, hol nem.}
 				\todoor{Változtatás: A jelölés részt előrrébb hoztam, hogy a tételt precízebben ki tudjam mondani, és $m_1$, $M_2$ definícióit a Tanár úr megjegyzése alapján átírtam.}$m_1:=\smash{\displaystyle \min_{x \in [x_k,x^*]}} |f'(x)|$, $M_2:=\smash{\displaystyle \max_{x\in [x_k,x^*]}} |f''(x)|$, $C:=\frac{M_2}{2m_1}$
 			\end{Jel}
 			\begin{Tet}
 			\label{t2} Tegyük fel, hogy $f\in C^2[a,b]$, és egyértelműen létezik $x^*\in [a,b]$ amelyre $f(x^*)=0$, továbbá $m_1>0$. \todoor{Változás: töröltem $M_2$-s feltételt}Ekkor, ha a Newton-módszer konvergens, akkor másodrendben konvergál a gyökhöz.
 			\end{Tet}
 			\begin{Biz}
-				Írjuk fel $f$ $x_k$ körüli másodfokú polinomját Lagrange maradéktaggal az $x^*$ pontban 
-                \todoor{Változás: átírtam az első mondatot} 
+				Írjuk fel $f$ $x_k$ körüli másodfokú Taylor-polinomját Lagrange maradéktaggal az $x^*$ pontban 
 				\begin{eqnarray}
 					f(x^*)&=&f(x_k)+f'(x_k)(x^*-x_{k})+\frac{f''(\xi)}{2}(x^*-x_{k})^2 \\
 					0&=&\frac{f(x_k)}{f'(x_k)}+(x^*-x_{k})+\frac{\frac{f''(\xi)}{2}(x^*-x_{k})^2}{f'(x_k)}\\
@@ -192,7 +200,7 @@
 				Vagyis hogyha a Newton-módszer konvergens, akkor másodrendben konvergál.
 			\end{Biz}
 			
-            \todoor{Változás: Ezt újonnan írtam bele} A másodrendű konvergencia azt jelenti, hogy a hiba legalább négyzetesen csökken, vagyis a helyes jegyek száma nagyjából megduplázódik a lépésenként.
+    A másodrendű konvergencia azt jelenti, hogy a hiba legalább négyzetesen csökken, vagyis a helyes jegyek száma nagyjából megduplázódik a lépésenként.
             
 			Hogyan tudjuk garantálni a konvergenciát? \todoor{Változtatás: Tanár úr megjegyzése alapján a következő mondat} \ref{e3} egyenlőtlenséget a következőképpen tudjuk iterálni $x^*$ közelében
 			\begin{eqnarray}
@@ -268,7 +276,7 @@
     %
     %=======================================================
             
-            
+        \todoor{Megjegyzés: Ebben a részben nem vagyok biztos, \cite[p. 145]{na}-ben találtam az 5.2.3. tétel, de nem a Newton-módszerre szól hanem általánosan a fixpont iterációkra, de átírtam egy-két dolog, ahogy szerintem specifikus a Newton-módszerre.}    
 		\section{Leállási feltétel}
 			\begin{Jel}
 				$m_1:=\smash{\displaystyle \min_{x \in (a,b)} } \left| \left( \dfrac{f(x)}{f'(x)} \right)' \right|$
@@ -316,15 +324,16 @@
 
 
 		\section{Komplex eset}
-            Érdemes megvizsgálni a módszert komplex gyökkel rendelkező egyenletekre is. Ekkor a fentiekkel analóg állítások mondhatók ki. A komplex eset geometriai meggondolása is hasonló. Feleltessük meg a $z=x+yi \in \mathbb{C}$ számokat $(x,y)\in\mathbb{R}^2$ vektorokkal. Legyen $f(z)=u+vi=u(x,y)+v(x,y)i$ analitikus függvény. $|f(z)|=\sqrt{u^2(x,y)+v^2(x,y)}$. $z_k=x_k+y_ki$ ahol $f$, és $f'$ sem 0. Legyen $T_k$ $|f(z)|$ érintő síjka a $(x_k,y_k)$ helyen, és legyen $L_k$ az $xy$ sík és $T_k$ metszésvonala. Ekkor \[z_{k+1}=x_{k+1}+y_{k+1}i=z_k-\frac{f(z_k)}{f'(z_k)}\] megfelel annak az $(x_{k+1},y_{k+1})$ pontnak amelyik az $L_k$ egyenesen legközelebb van $(x_k,y_k)$ ponthoz. (\ref{k6}) \cite[p. 809]{Yau98}. Meggondolható, hogy ez valós esetben ugyanazt jelenti mint eddig, hiszen a két sík metszésvonala helyett, az x tengely és az érintő egyenes metszéspontját vesszük. A lépés iránya ezáltal ellentétes $|f(z)|$ gradiensével a $z_k$ pontban.
+             Érdemes megvizsgálni a módszert komplex gyökkel rendelkező egyenletekre is. Ekkor a fentiekkel analóg állítások mondhatók ki. A komplex eset geometriai meggondolása is hasonló. Feleltessük meg a $z=x+yi \in \mathbb{C}$ számokat $(x,y)\in\mathbb{R}^2$ vektorokkal. Legyen $f(z)=u+vi=u(x,y)+v(x,y)i$ analitikus függvény. $|f(z)|=\sqrt{u^2(x,y)+v^2(x,y)}$. $z_k=x_k+y_ki$ ahol $f$, és $f'$ sem 0. Legyen $T_k$ $|f(z)|$ érintő síkja a $(x_k,y_k)$ helyen, és legyen $L_k$ az $xy$ sík és $T_k$ metszésvonala. Belátható, hogy ekkor \[z_{k+1}=x_{k+1}+y_{k+1}i=z_k-\frac{f(z_k)}{f'(z_k)}\] megfelel annak az $(x_{k+1},y_{k+1})$ pontnak amelyik az $L_k$ egyenesen legközelebb van $(x_k,y_k)$ ponthoz. (\ref{k6}) \cite[p. 809]{Yau98}. A lépés iránya ezáltal ellentétes $|f(z)|$ gradiensével a $z_k$ pontban.
             \begin{figure}[htp]
 				\begin{center}
 				\includegraphics[scale=0.7]{kep6.png}
 				\caption{A komplex eset geometriai meggondolása \cite[p. 807]{Yau98}} \label{k6}
 				\end{center}
 			\end{figure}
-            
-            Vegyük például a $f(x)=x^2-2i$ komplex együtthatós polinomot, amelynek az $1+i$ és a $-1-i$ a gyökei. A gradiensnél (\ref{k7} ábra) valamivel jobb szemléltetés végett definiáljuk a következő vektormezőt
+			Meggondolható, hogy ez valós esetben ugyanazt jelenti mint eddig, hiszen a két sík metszésvonala helyett, az $x$ tengely és $|f(x)|$ érintő egyenesének metszéspontját vesszük, ami megegyezik az $x$ tengely és $f(x)$ érintőjének metszéspontjával.	 	
+
+            Vegyük például a $f(x)=x^2-2i$ komplex együtthatós polinomot, amelynek az $1+i$ és a $-1-i$ a gyökei. $|f|$ gradiensénél (\ref{k7} ábra) valamivel jobb szemléltetés végett definiáljuk a következő vektormezőt
 			\[g(x,y)=\left(\mathrm{Re} \left\{ -\frac{f(x+yi)}{f'(x+yi)} \right \} ,\mathrm{Im} \left\{-\frac{f(x+yi)}{f'(x+yi)}\right \} \right)\]
             Ezt ábrázolva láthatjuk, hogy az esetünkben hogyan fog haladni a komplex síkon a módszer. A \ref{k4} ábrákon jelöltem $1-0.5i$-ből indított módszer pontjait is. A kezdőpont pirossal van ábrázolva, ami az iterációs lépésekkel átvált sárgába.
 			\begin{figure}[htp!]
@@ -359,7 +368,24 @@
 				\end{center}
 			\end{figure}
 
-
+			\todoor{Változás: (2013.04.13) Innentől a fejezet végéig új} 
+            A komplex síkon minden gyökhöz tartozik egy vonzáskörzet, amely halmazból az iterációt indítva az adott gyökhöz konvergál a módszer. A teljes komplex síkhoz, ezenkívül hozzátartoznak azon ponthalmazok ahonnan a módszer nem konvergens. Számos komplex függvényre ezen halmazok határai egy fraktált határoznak meg. (\ref{k10} ábra)
+			
+			\begin{figure}[htp]
+				\begin{center}
+				{%
+					\setlength{\fboxsep}{0pt}%
+					\setlength{\fboxrule}{1pt}%
+					\fbox{\includegraphics[scale=0.35]{fractal.png}}
+				}%
+				\caption{$x^3-1$ komplex gyökeihez tartozó halmazok a $\{a+bi:a,b\in[-5,5]\}$ síkrészen. A piros részből indított iteráció $-1/2+i\sqrt{3}/2$-höz konvergál, a kék részről ennek komplex konjugáltjához, és a sárga részről $1$-hez.} \label{k10}
+				\end{center}
+			\end{figure}
+			
+			Érdekes kérdés, hogy meg tudjuk-e határozni a gyökökhöz tartozó vonzáskörzeteket adott függvényekre. A másodfokú polinomokra a következő tételt tudjuk
+			\begin{Tet}[Arthur Cayley, 1897]
+				Legyen $p$ komplex másodfokú polinom, melynek $\alpha$ és $\beta$ két különböző gyöke. Legyen $L$ az $\alpha$-t és $\beta$-t összekötő szakasz függőleges felezővonala. Ekkor, ha a Newton-módszert alkalmazzuk $p$-re, a gyökökhöz tartozó $B(\alpha)$ és $B(\beta)$ vonzáskörzetek, az $L$ egyenes által szétválasztott komplex félsíkok.
+			\end{Tet}
 
 
 %=======================================================
@@ -372,8 +398,10 @@
     
     
 	\chapter{Módosított módszer polinomokra}
-    	\todoor{Megjegyzés: Ez a fejezet még csak vázlat. Egyenlőre próbáltam összeírni valamilyen motivációt ami miatt módosítjuk a Newton-módszert.}
 		Adott a Newton-módszer, amit az előző fejezetben vizsgáltunk. Tudjuk, hogyha az $x_k$ sorozat konvergens, akkor másodrendben konvergál a gyökhöz (\ref{t2}), sőt bizonyos feltételeket biztosítva monoton konvergenciát tudtunk biztosítani (\ref{t1}). Azonban sok esetben a módszer nem konvergens. Szeretnénk egy olyan módszert, amely viszonylag gyorsan és sok helyről konvergens.
+        \todored{A sz\"ovegbe menjen: A probl\'ema ugyanis az, hogy a konvergenciavizsg\'alataink csak lok\'alisak voltak, azaz csak akkor garant\'alt\'ak a konvergenci\'at, amikor a gy\"okh\"oz kell\H oen k\"ozelr\H ol indultunk. Ez term\'eszetesen nem teljes\"ul egy v\'eletlen\"ul v\'alasztott  kezd\H opont eset\'en. Ilyen esetben csak abban lehet rem\'enykedni, hogy az iter\'aci\'o "v\'eletlens\'egb\H ol" egyik l\'ep\'es sor\'an k\"ozel ker\"ul a gy\"okh\"oz. 
+        
+Ennek a k\'erd\'esnek nagy elm\'elete van, \'es paradox m\'odon a komplex esetben lehet t\"obbet tudni, mint a val\'os esetben.}
   
       
       
@@ -454,9 +482,36 @@
                 \end{center}
                 
             \end{Pl}
-            	
-
-
+            
+            \begin{Pl}
+            	Egy szemléletesebb példaként hajtsuk végre a módszert a következő polinomon: $x_0=5$ kezdőponttal \[p(x)=x^3+2x^2-5x-6\]
+            \begin{figure}[htp!]
+           		\centering
+                \subfigure[Az első lépést $p$-n végezzük: $x_1=3.4$]{\includegraphics[scale=0.71]{0.png}}
+                \hspace{3mm} % két kép közötti távolság
+               	\subfigure[A második lépést is $p$-n végezzük: $x_2=2.4891$]{\includegraphics[scale=0.71]{1.png}}\\
+                \subfigure[A harmadik lépést $p/p'$-n végezzük: $x_3=1.9040$]{\includegraphics[scale=0.71]{2.png}}
+                \hspace{3mm} % két kép közötti távolság
+               	\subfigure[A negyedik lépést $p$-n végezzük: $x_4=2.0053$]{\includegraphics[scale=0.71]{3.png}}
+           	 \end{figure}
+             
+             Látszódik az ábrákon, hogy a negyedik lépéssel elég közel kerültünk a gyökhöz, az ábrákat továbbfolytatni ezáltal fölösleges helyfoglalás lenne, viszont a következő lépés megtalálja az $x^*=2$ gyököt.
+            \end{Pl}
+    %=======================================================
+    %
+    %				3. FEJEZET
+    %				MÓDOSÍTOTT MÓDSZER POLINOMOKRA
+    %					|
+    %					->	3.3 Elemzés
+    %
+    %=======================================================
+				
+			\section{Elemzés}
+				A dolgozat következő szakaszában az imént bevezetett módszert fogjuk több szempontból megvizsgálni. A vizsgálathoz több helyen a GNU Octave programnyelvet használom, ami szinte teljesen kompatibilis a MATLAB-bal, emellett ingyenes.
+				
+				Egy iterációs eljárás vizsgálásakor elsősorban az érdekelhet minket, hogy konvergens-e a módszer, és ha igen akkor milyen gyorsan konvergál. 
+				
+				
 
 
 
@@ -467,6 +522,8 @@
 		\bibitem{aa} Faragó István, \emph{Alkalmazott analízis 1}, előadás jegyzet 2012.
         \bibitem{na} Faragó István, Horváth Róbert, ``Nemlineáris egyenletek és egyenletrendszerek megoldása'' \emph{Numerikus módszerek}, Typotex 2011.
         \bibitem{Yau98} Lily Yau, Adi Ben-Israel ``The Newton and Halley Methods for Complex Roots'', \emph{The American Mathematical Monthly} Vol. 105, No. 9, November 1998. % http://folk.uib.no/ssu029/Pdf_file/Yau98.pdf
+		\bibitem{calculus} P.D. Straffin, C.C.T. Benson, \emph{Calculus Problems for a New Century}, Mathematical Association of America 1993.
 
+        
 	\end{thebibliography}
 \end{document}
