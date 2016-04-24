@@ -8,7 +8,7 @@
 \usepackage[onehalfspacing]{setspace}
 \usepackage[font=onehalfspacing]{caption}
 \usepackage[pdftex]{graphicx}
-\usepackage{subfigure} 
+\usepackage{subfigure}
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{latexsym}
 \usepackage{verbatim}
@@ -50,7 +50,7 @@
 
 
 % Első két oldal:
-\begin{singlespace} 
+\begin{singlespace}
 
 
 	\thispagestyle{empty}
@@ -66,7 +66,7 @@
 		\vspace{35pt}
 		Témavezető: Sigray István\\ Műszaki Gazdasági Tanár, Analízis Tanszék\\
 		\vspace{100pt}
-		\includegraphics[scale=0.21]{elte.png}
+		\includegraphics[scale=0.21]{kepek/elte.png}
 		\vspace{25pt}
 		\\ 2013\\ Budapest
 	\end{center}
@@ -165,7 +165,7 @@
 
 
 	\chapter{A Newton-módszer}
-    
+
 
     %=======================================================
     %
@@ -175,26 +175,26 @@
     %					->	2.1 A módszer leírása
     %
     %=======================================================
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
 		\section{A módszer leírása}
 			A Newton-módszert, mint a neve is mutatja, először Isaac Newton dolgozta ki, azonban a mai formáját Joseph Raphson írta le 1690-ben, ezért Newton-Raphson-módszernek is hívják. Newton a módszert eredetileg polinomokra alkalmazta, ahogy a későbbiekben majd én is teszem. A Newton-módszer egy iterációs eljárás nemlineáris egyenletek gyökeinek megtalálására, közelítésére. A módszer - valós esetben - egy geometriailag nagyon egyszerű meggondoláson alapul, amit egy kép segítségével fogok bemutatni.
-			
+
 			\begin{figure}[ht]
 				\centering
-				\includegraphics[scale=0.55]{kep1.png}
+				\includegraphics[scale=0.55]{kepek/kep1.png}
 				\caption{Egy lépés a Newton-módszerrel}\label{k1}
 			\end{figure}
-            
+
 			Első lépésként vegyünk egy kezdőpontot az $x$ tengelyen, amely elég közel van a gyökünkhöz. Jelöljük $x_0$-lal. Tegyük fel, hogy $n$ lépés után eljutottunk az $x_n$ pontig. Húzzunk érintőt a grafikonhoz ebben a pontban. Az érintő és az $x$ tengely metszéspontja legyen a következő pontunk, $x_{n+1}$, majd így folytassuk amíg elég közel nem kerülünk az egyenletünk gyökéhez. Tegyük fel, hogy $x_k$ közel van az $f(x)=0$ egyenlet $x^*$ gyökéhez, és $f$ kétszer folytonosan differenciálható. Ekkor a következőképpen írhatjuk fel $f$ elsőfokú Taylor-polinomját maradéktaggal
 			\[ f(x^*)=f(x_k)+f'(x_k)(x^*-x_{k})+O((x^*-x_{k})^2) \]
 			$f(x^*)$ lineáris közelítéséhez nincsen szükségünk az $(x^*-x_{k})^2$-es tagokra.
@@ -215,25 +215,25 @@
 					\begin{tabular}{|r|r|r|r|}
 						\hline
 						$k$ & $x_k$     & $f(x_k)$      & $|x_k-x^*|$  \\ \hline
-						$0$ & $-1,\!0000$ & $-1,\!2000e+01$ & $1,\!5000e+00$ \\ 
-						$1$ & $-3,\!4000$ & $6,\!3360e+00$  & $9,\!0000e-01$ \\ 
-						$2$ & $-1,\!9982$ & $-4,\!5159e+00$ & $5,\!0177e-01$ \\ 
-						$3$ & $-2,\!5001$ & $8,\!6664e-04$  & $9,\!9045e-05$ \\ 
+						$0$ & $-1,\!0000$ & $-1,\!2000e+01$ & $1,\!5000e+00$ \\
+						$1$ & $-3,\!4000$ & $6,\!3360e+00$  & $9,\!0000e-01$ \\
+						$2$ & $-1,\!9982$ & $-4,\!5159e+00$ & $5,\!0177e-01$ \\
+						$3$ & $-2,\!5001$ & $8,\!6664e-04$  & $9,\!9045e-05$ \\
 						$4$ & $-2,\!5000$ & $-9,\!8121e-09$ & $1,\!1214e-09$ \\
 						\hline
 					\end{tabular}
 				\end{center}
 			\end{Pl}
-            
-    	
-        
-        
-        
-        
-        
-        
-        
-            
+
+
+
+
+
+
+
+
+
+
     %=======================================================
     %
     %				2. FEJEZET
@@ -242,17 +242,17 @@
     %					->	2.2 Konvergencia vizsgálat
     %
     %=======================================================
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
 		\section{Konvergencia vizsgálat}
 			Legyen $[a,b]\subset{\mathbb R}$ egy intervallum, $f:[a,b]\to {\mathbb R}$ kétszer folytonosan differenciálható és $\exists !x^*\in[a,b]$ amelyre $f(x^*)=0$. Ebben az alfejezetben azt vizsgáljuk, hogy milyen esetben tudjuk garantálni azt, hogy a Newton-módszer $f$ $x^*$ gyökéhez konvergál.
 			\begin{Jel}
@@ -262,7 +262,7 @@
 			\label{t2} Tegyük fel, hogy $m_1>0$ és a Newton-módszer konvergens, ekkor másodrendben konvergál a gyökhöz.
 			\end{Tet}
 			\begin{Biz}
-				Írjuk fel $f$ $x_k$ körüli elsőfokú Taylor-polinomját Lagrange maradéktaggal az $x^*$ pontban 
+				Írjuk fel $f$ $x_k$ körüli elsőfokú Taylor-polinomját Lagrange maradéktaggal az $x^*$ pontban
 				\begin{eqnarray}
 					f(x^*)&=&f(x_k)+f'(x_k)(x^*-x_{k})+\frac{f''(\xi)}{2}(x^*-x_{k})^2 \\
 					0&=&\frac{f(x_k)}{f'(x_k)}+(x^*-x_{k})+\frac{\frac{f''(\xi)}{2}(x^*-x_{k})^2}{f'(x_k)}\\
@@ -282,7 +282,7 @@
 			\end{Biz}
 
 			A másodrendű konvergencia azt jelenti, hogy a hiba legalább négyzetesen csökken, vagyis a helyes jegyek száma nagyjából megduplázódik a lépésenként.
-            
+
 			Hogyan tudjuk garantálni a konvergenciát? \ref{e3} egyenlőtlenséget a következőképpen tudjuk iterálni $x^*$ közelében
 			\begin{eqnarray}
 				|x_k-x^*|&\leq& C |x^*-x_{k-1}|^2\\
@@ -292,7 +292,7 @@
 			Vagyis $|x_k-x^*|\leq C^{2^k-1}|x^*-x_0|^{2^k}$. Szeretnénk, ha a következő teljesülne
 			\[ \lim_{k \to \infty} |x^*-x_k|=0\]
 			Ha a \ref{e4}. egyenletben az egyenlőtlenség jobb oldala tart nullához, akkor a Rendőr-elv alapján ez teljesül.
-			\[ C^{2^k-1}|x^*-x_0|^{2^k}=q^{2^k-1}|x^*-x_0| \] 
+			\[ C^{2^k-1}|x^*-x_0|^{2^k}=q^{2^k-1}|x^*-x_0| \]
 			Ez akkor és csak akkor tart nullához, ha $q<1$.
 			\[q=C|x^*-x_0|=  \frac{M_2}{2 m_1} \left |x^*-x_0 \right | < 1 \]
 			Átrendezve
@@ -302,54 +302,54 @@
 				Legyen $m_1:=\min_{x \in [a,b]} |f'(x)|$, és $M_2:=\max_{x\in [a,b]} |f''(x)|$. Tegyük fel, hogy $m_1, M_2 > 0$ és $ |x_0-x^*|<  \frac{2 m_1}{M_2} $. Ekkor
 				\[\smash{\displaystyle \lim_{k\to \infty} }x_k= x^*\]
 			\end{Tet}
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			\begin{Tet}
 				\label{t1}
 				Tegyük fel, hogy $x_0\in [a,b]$, $\forall x \in (x^*,x_0)$-re $f'(x)$,$f''(x) \neq 0$, és $x_0$-ra teljesül, hogy $f(x_0)f''(x_0)>0$, akkor $x_k$ szigorúan monoton tart a gyökhöz.
@@ -363,8 +363,8 @@
 					\item $x_0<x^*$, $f(x_0)<0$
 				\end{enumerate}
 				Az esetek bizonyítása nagyban hasonlít, ezért csak az elsőt látjuk be.
-                
-                Mivel $f(x_0)>0$ és $f(x_0)f''(x_0)>0$, ezért $f''(x_0)>0$. Továbbá $(x^*,x_0)$-n $f'(x)\neq 0$, ezért az vagy mindenhol pozitív, vagy mindenhol negatív. 
+
+                Mivel $f(x_0)>0$ és $f(x_0)f''(x_0)>0$, ezért $f''(x_0)>0$. Továbbá $(x^*,x_0)$-n $f'(x)\neq 0$, ezért az vagy mindenhol pozitív, vagy mindenhol negatív.
 				\begin{eqnarray}
 					\label{e6}0&<&f(x_0)\\
 					\label{e7}&=&f(x_0)-f(x^*)\\
@@ -414,65 +414,65 @@
 
 		\section{Komplex eset}
 			Érdemes megvizsgálni a módszert komplex gyökkel rendelkező egyenletekre is. Ekkor a fentiekkel analóg állítások mondhatók ki. A komplex eset geometriai meggondolása is hasonló. Feleltessük meg a $z=x+yi \in \mathbb{C}$ számokat $(x,y)\in\mathbb{R}^2$ vektorokkal. Legyen $f(z)=u+vi=u(x,y)+v(x,y)i$ analitikus függvény. $|f(z)|=\sqrt{u^2(x,y)+v^2(x,y)}$. $z_k=x_k+y_ki$ ahol $f$ és $f'$ sem 0. Legyen $T_k$ $|f(z)|$ érintő síkja a $(x_k,y_k)$ helyen, és legyen $L_k$ az $xy$ sík és $T_k$ metszésvonala. Belátható, hogy ekkor \[z_{k+1}=x_{k+1}+y_{k+1}i=z_k-\frac{f(z_k)}{f'(z_k)}\] megfelel annak az $(x_{k+1},y_{k+1})$ pontnak, amelyik az $L_k$ egyenesen legközelebb van $(x_k,y_k)$ ponthoz. (\ref{k6}) \cite[p. 809]{Yau98}. A lépés iránya ezáltal ellentétes $|f(z)|$ gradiensével a $z_k$ pontban.
-			
+
 			 \begin{figure}[ht]
 				\begin{center}
-				\includegraphics[scale=0.7]{kep6.png}
+				\includegraphics[scale=0.7]{kepek/kep6.png}
 				\caption{A komplex eset geometriai meggondolása \cite[p. 807]{Yau98}} \label{k6}
 				\end{center}
 			\end{figure}
-			
+
 			Meggondolható, hogy ez valós esetben ugyanazt jelenti mint eddig, hiszen a két sík metszésvonala helyett, az $x$ tengely és $|f(x)|$ érintő egyenesének metszéspontját vesszük, ami megegyezik az $x$ tengely és $f(x)$ érintőjének metszéspontjával.
 
 			Vegyük például a $f(x)=x^2-2i$ komplex együtthatós polinomot, amelynek az $1+i$ és a $-1-i$ a gyökei. $|f|$ gradiensénél (\ref{k7}. ábra) valamivel jobb szemléltetés végett definiáljuk a következő vektormezőt
 			\[g(x,y)=\left(\mathrm{Re} \left\{ -\frac{f(x+yi)}{f'(x+yi)} \right \} ,\mathrm{Im} \left\{-\frac{f(x+yi)}{f'(x+yi)}\right \} \right)\]
 			Ezt ábrázolva láthatjuk, hogy az esetünkben hogyan fog haladni a komplex síkon a módszer. A \ref{k4}. ábrákon jelöltem $1-0,\!5i$-ből indított módszer pontjait is. A kezdőpont pirossal van ábrázolva, ami az iterációs lépésekkel átvált sárgába.
-			
+
 			\begin{figure}[ht]
-				\subfigure[$-\nabla|f(z)|$ és négy iterációs lépés az $1-0,\!5i$-ből]{\includegraphics[scale=0.5]{kep7.png} \label{k7}}
+				\subfigure[$-\nabla|f(z)|$ és négy iterációs lépés az $1-0,\!5i$-ből]{\includegraphics[scale=0.5]{kepek/kep7.png} \label{k7}}
 				\hfill
-				\subfigure[$g(x,y)$ és négy iterációs lépés az $1-0,\!5i$-ből]{\includegraphics[scale=0.5]{kep4.png}}
+				\subfigure[$g(x,y)$ és négy iterációs lépés az $1-0,\!5i$-ből]{\includegraphics[scale=0.5]{kepek/kep4.png}}
 				\caption{A lépés irányán túl a (b) ábra a lépés nagyságát is szemlélteti} \label{k4}
 			\end{figure}
-			
+
 			\begin{Pl}
 				\ref{k4}. ábra számokkal, vagyis $f(x)=x^2-2i$ gyökét keressük $1-0,\!5i$ kezdőponttal.
 				\begin{center}
 					\begin{tabular}{|r|r|r|r|}
 						\hline
 						$k$ & $z_k$                & $|f(z_k)|$    & $|z_k-z^*|$  \\ \hline
-						$0$ & $1,\!00000 - 0,\!50000i$ & $3,\!0923e+00$  & $1,\!5000e+00$ \\ 
-						$1$ & $0,\!10000 + 0,\!55000i$ & $1,\!9125e+00$  & $1,\!0062e+00$ \\ 
-						$2$ & $1,\!81000 + 0,\!59500i$ & $2,\!9261e+00$  & $9,\!0561e-01$ \\ 
-						 $3$ & $1,\!06891 + 0,\!79611i$ & $5,\!8966e-01$  & $2,\!1522e-01$ \\ 
-						$4$ & $0,\!98262 + 0,\!99980i$ & $4,\!8935e-02$  & $1,\!7377e-02$ \\ 
-						$5$ & $1,\!00008 + 0,\!99992i$ & $3,\!0464e-04$  & $1,\!0771e-04$ \\ 
+						$0$ & $1,\!00000 - 0,\!50000i$ & $3,\!0923e+00$  & $1,\!5000e+00$ \\
+						$1$ & $0,\!10000 + 0,\!55000i$ & $1,\!9125e+00$  & $1,\!0062e+00$ \\
+						$2$ & $1,\!81000 + 0,\!59500i$ & $2,\!9261e+00$  & $9,\!0561e-01$ \\
+						 $3$ & $1,\!06891 + 0,\!79611i$ & $5,\!8966e-01$  & $2,\!1522e-01$ \\
+						$4$ & $0,\!98262 + 0,\!99980i$ & $4,\!8935e-02$  & $1,\!7377e-02$ \\
+						$5$ & $1,\!00008 + 0,\!99992i$ & $3,\!0464e-04$  & $1,\!0771e-04$ \\
 						$6$ & $1,\!00000 + 1,\!00000i$ & $1,\!1601e-08$  & $4,\!1015e-09$ \\
 						\hline
 					\end{tabular}
 				\end{center}
 			\end{Pl}
 			Láthatjuk, a módszer nem csak komplex gyökökkel rendelkező valós polinomokra működik, hanem komplex együtthatós polinomokra is. Azonban ha egy valós polinom komplex gyökét szeretnénk meghatározni, akkor szükséges, hogy a kezdőpontunk képzetes része eltérjen nullától, különben az iterációs lépés tulajdonsága miatt $\forall z_k\in \mathbb{R}$ (\ref{k5}. ábra).
-			
+
 			\begin{figure}[ht]
 				\begin{center}
-				\includegraphics[scale=0.62]{kep5.png}
+				\includegraphics[scale=0.62]{kepek/kep5.png}
 				\caption{$(x-( - 1/2-i/4)) (x-( - 1/2+i/4))$ komplex gyökeinek keresése valós ($x_0=1$) kezdőpontból} \label{k5}
 				\end{center}
 			\end{figure}
-			
-			
+
+
 			A komplex síkon minden gyökhöz tartozik egy vonzási tartomány, amely halmazból az iterációt indítva az adott gyökhöz konvergál a módszer. A teljes komplex síkhoz, ezenkívül hozzátartoznak azon ponthalmazok, ahonnan a módszer divergens. Érdekes kérdés, hogy meg tudjuk-e határozni a gyökökhöz tartozó vonzási tartományokat adott függvényekre. A másodfokú polinomokra a következő tételt tudjuk
 			\begin{Tet}[Arthur Cayley, 1897] \label{Cayley}
 				Legyen $p$ komplex másodfokú polinom, melynek $\alpha$ és $\beta$ két különböző gyöke. Legyen $L$ az $\alpha$-t és $\beta$-t összekötő szakasz merőleges felezővonala. Ekkor, ha a Newton-módszert alkalmazzuk $p$-re, a gyökökhöz tartozó $B(\alpha)$ és $B(\beta)$ vonzási tartományok, az $L$ egyenes által szétválasztott komplex félsíkok.
 			\end{Tet}
 			Cayley nem tudta megállapítani, hogy mi teljesül nagyobb fokszámú polinomok esetén az azokon fellépő kaotikus viselkedés miatt. Ugyanis ehhez hasonló szabályos viselkedés nem figyelhető meg harmad vagy magasabb fokú polinomok esetén.
-            
-     
+
+
 			\begin{Tet}[Gauss-Lucas]\label{GL}
 				Legyen $p(z)$ egy nemkonstans komplex együtthatós polinom, $z_1,\ldots,z_n$ gyökökkel és $p'(z)$ $w_1,\ldots,w_{n-1}$ gyökökkel. Legyen $H=\{\sum_{i=1}^n c_iz_i\,\,0\leq c_i\leq 1,\,\,\sum_{i=1}^n c_i=1\}$ $p$ komplex gyökeinek konvex burka a komplex síkon. Ekkor $\forall i\,\,w_i\in H$.
 			\end{Tet}
-Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gyökeinek a közelében, semmi biztosíték nincs arra, hogy a kezdőponthoz legközelebbi gyökhöz konvergál. Így míg a \ref{Cayley}. tétel alapján erre az általánosításra számíthatnánk, a \ref{GL}. tétel következményeként előfordulhat, hogy az egyik gyökhöz közel elhelyezkedő derivált gyöke, az egyik iterációs lépés során átsodorja a módszert egy másik gyökhöz közelebb. 
+Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gyökeinek a közelében, semmi biztosíték nincs arra, hogy a kezdőponthoz legközelebbi gyökhöz konvergál. Így míg a \ref{Cayley}. tétel alapján erre az általánosításra számíthatnánk, a \ref{GL}. tétel következményeként előfordulhat, hogy az egyik gyökhöz közel elhelyezkedő derivált gyöke, az egyik iterációs lépés során átsodorja a módszert egy másik gyökhöz közelebb.
 
 
 			Valójában minden komplex differenciálható függvényre ezen halmazok határai egy fraktált, úgynevezett Julia halmazt határoznak meg. (\ref{k10}. ábra)
@@ -482,7 +482,7 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 				{%
 					\setlength{\fboxsep}{0pt}%
 					\setlength{\fboxrule}{1pt}%
-					\fbox{\includegraphics[scale=0.35]{fractal.png}}
+					\fbox{\includegraphics[scale=0.35]{kepek/fractal.png}}
 				}%
 				\caption{$x^3-1$ komplex gyökeihez tartozó halmazok a $\{a+bi:a,b\in[-5,5]\}$ síkrészen. A piros részből indított iteráció $-1/2+i\sqrt{3}/2$-höz konvergál, a zöld részről ennek komplex konjugáltjához, és a kék részről $1$-hez. A sötétebb részekről lassabb a módszer.} \label{k10}
 				\end{center}
@@ -494,13 +494,13 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 				\subfigure[{Az $f(x) = (x-1)(x+0,\!5+0,\!33i) (x+0,\!5-0,\!33i)$ polinom a $\{a+bi:a,b\in[-0,\!2;0,\!2]\} $ halmazon.}]{
 					\setlength{\fboxsep}{0pt}%
 					\setlength{\fboxrule}{1pt}%
-					\fbox{\includegraphics[scale=0.45]{frac1.png}}
+					\fbox{\includegraphics[scale=0.45]{kepek/frac1.png}}
 				}
 				\hspace{1cm}
 				\subfigure[{Az $f(x) = x^3-2x+2$ polinom a $\{a+bi:a,b\in[-0,\!3;0,\!3]\} $ halmazon.}]{
 					\setlength{\fboxsep}{0pt}%
 					\setlength{\fboxrule}{1pt}%
-					\fbox{\includegraphics[scale=0.45]{frac2.png}}
+					\fbox{\includegraphics[scale=0.45]{kepek/frac2.png}}
 				}
 \caption{Példa olyan komplex halmazokra, amelyekről egy adott polinomon a Newton-módszer divergens.} \label{img:div}
 				\end{center}
@@ -524,18 +524,18 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 %				MÓDOSÍTOTT MÓDSZER POLINOMOKRA
 %
 %=======================================================
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Módosított módszer polinomokra}
 		Adott a Newton-módszer, amit az előző fejezetben vizsgáltunk. Tudjuk, hogyha az $x_k$ sorozat konvergens, akkor másodrendben konvergál a gyökhöz (\ref{t2}), sőt bizonyos feltételekkel monoton konvergenciát tudtunk biztosítani (\ref{t1}). Azonban sok esetben a módszer nem konvergens, ugyanis az említett tételek feltételei könnyen megsérülnek, ha a kezdőpontot nem választjuk a gyöknek egy kellően kis sugarú környezetéből. Ezt véletlenszerűen választott kezdőponttal nem tudjuk garantálni, így ilyenkor csak remélhetjük, hogy az iteráció az egyik lépés során véletlenül belelép egy megfelelő intervallumba, azzal biztosítva a további konvergenciát. Szeretnénk egy olyan módszert, amely ennek ellenére konvergens viszonylag gyorsan és sok helyről.
 
@@ -579,34 +579,34 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 
 		\section{Motiváció}
 			Vizsgáljuk meg, hogy egy polinom hogyan viselkedik a \ref{t1}. tétel alapján, vagyis honnan indulva garantált a monoton konvergencia.
-			
+
 			\begin{figure}[ht]
 				\centering
-				\includegraphics[scale=0.6]{kep2.png}
+				\includegraphics[scale=0.6]{kepek/kep2.png}
 				\caption{Egy polinom felosztása az első és második deriváltjának viselkedése alapján}\label{k2}
 			\end{figure}
-			
+
 			A tétel feltételei alapján a kezdőpontunk és a gyök közötti intervallumon sem a függvény deriváltja, sem a második deriváltja nem lehet nulla. Ez négy lehetőséget ad melyet a \ref{k2}. ábrán szemléltettem. Mint az ábrán is látható, előfordulhat olyan eset, amikor egy ilyen intervallumon nincsen gyöke a polinomnak. Azonban amelyik intervallumon van, ott a gyök előtti, vagy utáni részről véve a kezdőpontunkat, a feltételek teljesülnek.
-			
+
 			\begin{figure}[ht]
 				\centering
-				\includegraphics[scale=0.6]{kep3.png}
+				\includegraphics[scale=0.6]{kepek/kep3.png}
 				\caption{Megfelelő intervallumok a kezdőpont választáshoz \ref{t1}. tétel alapján}\label{k3}
 			\end{figure}
-			
+
 			\ref{k3}. ábrán láthatjuk, hogy esetünkben a kezdőpontunknak alkalmas intervallum majdnem lefedi a számegyenest, és bár monoton és másodrendű konvergencia garantált, a két szélső intervallumban, ha távolról indulunk, a nagy abszolút értékű derivált miatt, előfordulhat, hogy lassú lesz a módszer.
 
 			Ha egy polinomot leosztunk egy másik polinommal, és a két polinomnak nem egyezik meg valamelyik gyöke, akkor egy olyan függvényt kapunk amelynek a gyökei megegyeznek az eredeti polinoméval. Ugyanis legyen $p_1(x)$ a polinomunk amelyiknek a gyökeit keressük, és osszuk le $p_2(x)$ polinommal. Legyen $x^*$ gyöke $p_1(x)$-nek. Ekkor
 			\[ \frac{p_1(x^*)}{p_2(x^*)}=\frac{0}{p_2(x^*)}=0\]
 			Felvetődik tehát az ötlet, hogy hajtsuk végre a Newton-módszert a $\frac{p_1(x)}{p_2(x)}$ egyenlet gyökeinek keresésére. Vegyük azt a speciális esetet, amikor $p_2(x)=p_1'(x)$. Ha $p_1(x)$-nek nincs többszörös gyöke, akkor a módosított egyenletünknek ugyanazok a gyökei.
-			
+
 			\begin{figure}[ht]
-				\subfigure[Egy polinom és a módosított egyenlete]{\includegraphics[scale=0.5]{sage8.png} \label{k8}}
+				\subfigure[Egy polinom és a módosított egyenlete]{\includegraphics[scale=0.5]{kepek/sage8.png} \label{k8}}
 				\hfill
-				\subfigure[Megfelelő intervallumok a kezdőpont választáshoz \ref{t1}. tétel alapján]{\includegraphics[scale=0.5]{sage9.png} \label{k9}}
+				\subfigure[Megfelelő intervallumok a kezdőpont választáshoz \ref{t1}. tétel alapján]{\includegraphics[scale=0.5]{kepek/sage9.png} \label{k9}}
 				\caption{}
 			\end{figure}
-   
+
 
 
 
@@ -637,16 +637,16 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 
 
 		\section{A módszer}
-            
+
 			Ahogyan a \ref{k9}. ábrán látható a két egyenlet konvergenciát garantáló intervallumai jól kiegészítik egymást. Ez alapján az az ötletünk támadhat, hogyha véletlenszerűen váltogatjuk az egyenletet, amire a módszert alkalmazzuk, jó eséllyel eljutunk az egyenletünk valamelyik gyökéhez.
 
-			Tehát adott $p$ polinom, amelynek a gyökeit keressük. Ekkor vegyük azt az iterációt, aminek egy lépését $0,\!5$ valószínűséggel a (\ref{e9}.) iterációval tesszük, és $0,\!5$ valószínűséggel (\ref{e10}.) iterációval tesszük. 
+			Tehát adott $p$ polinom, amelynek a gyökeit keressük. Ekkor vegyük azt az iterációt, aminek egy lépését $0,\!5$ valószínűséggel a (\ref{e9}.) iterációval tesszük, és $0,\!5$ valószínűséggel (\ref{e10}.) iterációval tesszük.
 			\begin{eqnarray}
 				\label{e9}x_{k+1}&=&x_k- \frac{p(x_k)}{p'(x_k)}\\
 				\label{e10}x_{k+1}&=&x_k-\frac{\frac{p(x_k)}{p'(x_k)}}{\left(\frac{p(x_k)}{p'(x_k)}\right)'}=x_k-\frac{p(x_k)p'(x_k)}{p'(x_k)^2-p''(x_k)p(x_k)}
 			\end{eqnarray}
 			A későbbiekben ezekre első (\ref{e9}.), és második (\ref{e10}.) iterációs lépésként, a módszerre pedig véletlen iterációként fogok hivatkozni.
-			
+
             \begin{Pl}
 				Az alábbiakban egy olyan harmadfokú polinomon végzem el az iterációt, aminek az együtthatóit $-50$ és $50$ között véletlenszerűen generáltam.
 				\[p(x)=-49,\!6776x^3+36,\!1231x^2-1,\!1662x-20,\!4780\]
@@ -654,11 +654,11 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 					\begin{tabular}{|r|r|r|r|r|}
 						\hline
 						$k$ &   iterációs lépés &   $x_k$                   &   $|f(x_k)|$      &   $|x_k-x^*|$  \\ \hline
-						$0$ &   -               &   $1+i$                   &   $8.2695e+01$    &   $5.5794e-01$ \\ 
-						$1$ &   1.              &   $0,\!78752 + 0,\!72275i$    &   $2,\!0696e+01$    &   $2,\!0946e-01$ \\ 
-						$2$ &   2.              &   $0,\!60295 + 0,\!54236i$    &   $3,\!4869e+00$    &   $4,\!9152e-02$ \\ 
-						$3$ &   1.              &   $0,\!64583 + 0,\!57250i$    &   $2,\!7337e-01$    &   $3,\!6089e-03$ \\ 
-						$4$ &   2.              &   $0,\!64227 + 0,\!57184i$    &   $1,\!3524e-03$    &   $1,\!7911e-05$ \\ 
+						$0$ &   -               &   $1+i$                   &   $8.2695e+01$    &   $5.5794e-01$ \\
+						$1$ &   1.              &   $0,\!78752 + 0,\!72275i$    &   $2,\!0696e+01$    &   $2,\!0946e-01$ \\
+						$2$ &   2.              &   $0,\!60295 + 0,\!54236i$    &   $3,\!4869e+00$    &   $4,\!9152e-02$ \\
+						$3$ &   1.              &   $0,\!64583 + 0,\!57250i$    &   $2,\!7337e-01$    &   $3,\!6089e-03$ \\
+						$4$ &   2.              &   $0,\!64227 + 0,\!57184i$    &   $1,\!3524e-03$    &   $1,\!7911e-05$ \\
 						$5$ &   1.              &   $0,\!64228 + 0,\!57183i$    &   $3,\!3361e-08$    &   $4,\!4183e-10$ \\
 						\hline
 					\end{tabular}
@@ -667,17 +667,17 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 			\end{Pl}
             \begin{Pl}
 				Egy szemléletes példaként hajtsuk végre a módszert a következő polinomon: $p(x)=x^3+2x^2-5x-6$, $x_0=5$ kezdőponttal.
-				
+
 				\begin{figure}[h]
 					\centering
-					\subfigure[Az első iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{0.png}}
+					\subfigure[Az első iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{kepek/0.png}}
 					\hspace{3mm} % két kép közötti távolság
-					\subfigure[Az első iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{1.png}}\\
-					\subfigure[Az második iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{2.png}}
+					\subfigure[Az első iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{kepek/1.png}}\\
+					\subfigure[Az második iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{kepek/2.png}}
 					\hspace{3mm} % két kép közötti távolság
-					\subfigure[Az első iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{3.png}}
+					\subfigure[Az első iterációs lépéssel lépünk]{\includegraphics[scale=0.75]{kepek/3.png}}
 				\end{figure}
-				
+
 				Az ábrán a következő lépések láthatók: $x_1=3,\!4$, $x_2=2,\!4891$, $x_3=1,\!9040$, $x_4=2,\!0053$. Megfigyelhető az ábrákon, hogy a negyedik lépéssel elég közel kerültünk a gyökhöz, az ábrákat továbbfolytatni ezáltal fölösleges helyfoglalás lenne, viszont a következő lépés megtalálja az $x^*=2$ gyököt. (\ref{pontossag}. megjegyzés)
 			\end{Pl}
 
@@ -707,9 +707,9 @@ Mivel a Newton-módszer kiszámíthatatlanul viselkedik a polinom deriváltja gy
 
 
 
-                
+
                 A dolgozat következő szakaszában az imént bevezetett módszert fogjuk több szempontból megvizsgálni. A vizsgálathoz több helyen a GNU Octave programnyelvet használom, ami szinte teljesen kompatibilis a MATLAB-bal, emellett ingyenes. A programok bemutatására ebben a fejezetben nem szánok sokat, csak éppen annyit, hogy érthető legyen az elvégzett művelet. A programok részletesebb bemutatását bővebben az \ref{Appendix}. függelékben végzem.
-				
+
 				  \begin{Megj}\label{pontossag}Szükségesnek tartom megjegyezni a programokkal számolt közelítések hibájának mértékét. Minden program a  \texttt{Newton.m} programot használja fel a Newton-módszer elvégzéséhez. Ennek a felhasználó az 5. argumentumában be tud állítani egy hibakorlátot, amelyet ha nem adunk meg akkor a $0,\!001$ alapbeállítással dolgozik. A programokban is végig ezt az értéket használtuk. A hibakorlát az abszolút relatív közelítési hibát korlátozza vagyis akkor mondjuk, hogy megtalálta a gyököt, ha\[\frac{|x_i-x_{i-1}|}{|x_i|}<0,\!001\]
 
 Miért jó ez a leállási feltétel? Ha csak a Newton-módszer definíciójára gondolunk:\[x_i-x_{i-1}=-\frac{f(x_{i-1})}{f'(x_{x-1})}\]Láthatjuk, ha $x_{i-1}$ közel van a gyökhöz, akkor az egyenlet jobb oldala közel van nullához (későbbi \ref{tartnullahoz}. állítás alapján), így a konvergencia tudatában a feltétel a gyök közelében tényleg biztosítja a leállást. Polinomok esetén az állítás megfordítása is igaz, azonban ez nem triviális. $|x_i|$ leosztásával nagyobb abszolút értékű számoknál nagyobb hibával dolgozunk, amivel azt érjük el, hogy nagyjából ugyanannyi helyes számjegyet kapjunk eredményeinkben annak nagyságrendjétől függetlenül. Ez természetesen nem minden esetben jó. Megoldandó feladat alapján eldönthető, hogy az abszolút közelítési hibát ($|x_i-x_{i-1}|$) használjuk helyette. Esetünkben ez nem lesz olyan fontos, mivel általában $0$-hoz közeli gyökökkel fogunk számolni.
@@ -718,64 +718,64 @@ Miért jó ez a leállási feltétel? Ha csak a Newton-módszer definíciójára
 				\begin{All}
 					Tegyük fel, hogy $p$ polinomra és egy adott $x^*$ gyökére teljesülnek a \ref{t2}. tétel feltételei, $p$-nek $x^*$ nem többszörös gyöke, és $p''(x)p(x)\neq p'(x)^2$. Ekkor \ref{e10} másodrendben konvergál a gyökhöz.
 				\end{All}
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 % itt tartok
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				\begin{Biz}
-				    A második iterációs lépés nem más, mint a Newton-módszer a $p/p'$ egyenletre, aminek adott gyöke megegyezik $p$ gyökével, így ha $p/p'$-re teljesülnek \ref{t2}. tétel feltételei, akkor mivel $p/p'$ adott gyökéhez másodrendben konvergál, így $p$ gyökéhez is. $p/p'$ folytonos azon a helyen kívül, ahol $p'=0$. Ezáltal kiválaszthatók a megfelelő $[a,b]$ intervallumok a gyökök körül, amely nem tartalmazzák $p'$ gyökhelyeit. 
-				    
+				    A második iterációs lépés nem más, mint a Newton-módszer a $p/p'$ egyenletre, aminek adott gyöke megegyezik $p$ gyökével, így ha $p/p'$-re teljesülnek \ref{t2}. tétel feltételei, akkor mivel $p/p'$ adott gyökéhez másodrendben konvergál, így $p$ gyökéhez is. $p/p'$ folytonos azon a helyen kívül, ahol $p'=0$. Ezáltal kiválaszthatók a megfelelő $[a,b]$ intervallumok a gyökök körül, amely nem tartalmazzák $p'$ gyökhelyeit.
+
 				    $m_1>0$-hoz azt kell belátnunk, hogy $(p/p')'\neq 0$
 				    \[\left( \frac{p(x)}{p'(x)} \right)'=1-\frac{p''(x)p(x)}{p'(x)^2}\]
 				    Tehát amennyiben $p''(x)p(x)=p'(x)^2$ teljesül valamilyen $x$-re, ott a függvényünk deriváltja $0$. Ezért tettük fel, hogy ez nem teljesül. Ehhez létezik megfelelő $[a,b]$ intervallum, hiszen ahol $p/p'=0$ ott a derivált $1$.
-				    
+
 				    $p/p'$ kétszer folytonosan differenciálható, ugyanis
 				    \[\left( \frac{p(x)}{p'(x)} \right)''=\left(1-\frac{p''(x)p(x)}{p'(x)^2}\right)'=-\frac{p'''(x)p'(x)^2p(x)+p''(x)p'(x)^3-2p''(x)^2p'(x)p(x)}{p'(x)^4}\]
 				    A számlálóban végzett folytonos függvények közötti műveletek nem befolyásolják a függvény folytonosságát, így az csak ott nem folytonos, ahol $p'(x)=0$, vagyis $p/p'$ $[a,b]$-n kétszer folytonosan differenciálható.
 				\end{Biz}
-				
+
 				Tehát ha megfelelő a polinomunk akkor (a megfelelő helyeken) két másodrendű módszert használunk véletlenszerűen váltakozva.
 
-				Azonban ha a polinomnak van többszörös gyöke, akkor sem kizárt, hogy a második iterációs lépés megtalálja a gyököt. Vegyük például a $p(x)=x(x-3)^2$ polinomot melynek a $3$ kétszeres gyöke. 
+				Azonban ha a polinomnak van többszörös gyöke, akkor sem kizárt, hogy a második iterációs lépés megtalálja a gyököt. Vegyük például a $p(x)=x(x-3)^2$ polinomot melynek a $3$ kétszeres gyöke.
 
 				\begin{figure}[ht]
 					\centering
-					\includegraphics[scale=0.7]{multi.png}
+					\includegraphics[scale=0.7]{kepek/multi.png}
 					\caption{$p(x)=x(x-3)^2$ polinom, annak deriváltja és a hányadosuk ábrázolása.}\label{img:multiple}
 				\end{figure}
 
-			
+
 			\ref{img:multiple}. ábrán látható, hogy bár $p'(x)$-nek is gyöke a $3$, annak környezetében abszolút értékben nagyobb értékeket vesz fel mint $p(x)$, ami miatt a hányados bár nem értelmezett $3$-ban, de \[\lim_{x\to3}\frac{p(x)}{p'(x)}=\lim_{x\to3}\frac{x(x-3)^2}{(x-3)(x-1)}=\lim_{x\to3}\frac{x(x-3)}{(x-1)}=0\]
 				Ez nekünk annyira pont elég, hogy a módszer, ahogyan közeledik $3$-hoz úgy egy idő után megálljon a hibahatár elérésekor.
-                
-                               Ezt általánosabban is kijelenthetjük. \begin{All}\label{tartnullahoz}Legyen $p(x)$ polinomnak $x^*$ ($n$-szeres) gyöke. Ekkor 
+
+                               Ezt általánosabban is kijelenthetjük. \begin{All}\label{tartnullahoz}Legyen $p(x)$ polinomnak $x^*$ ($n$-szeres) gyöke. Ekkor
                 \[\lim_{x\to x^*}\frac{p(x)}{p'(x)}=0\]
                 \end{All}
                 \begin{Biz}
@@ -784,18 +784,18 @@ Miért jó ez a leállási feltétel? Ha csak a Newton-módszer definíciójára
 
 				A polinomnak $n-1$ deriválás után még gyöke az $x^*$, ezért lett a számláló határértéke $0$. Ahhoz, hogy az egész kifejezás határértéke is $0$ legyen $p^{(n)}(x)\neq 0$ teljesülése szükséges. Ez teljesül, ugyanis tudjuk, hogy a polinom foka legalább $n$. Ha a polinom foka nagyobb mint $n$, akkor az $n.$ derivált különböző helyeken vesz fel 0 értéket. Ha a polinom foka $n$, akkor az $n.$ derivált egy konstansfüggvény, melynek értéke $p(x)$ főegyütthatója megszorozva $n!$-sal, ami nem egyenlő 0-val.
                 \end{Biz}
-                
+
 				A további statisztikai elemzéshez különböző adatok generálására lesz szükségünk. Ezelőtt vizsgáljuk meg a módszerek konvergenciáját és annak idejét egy-két példában, amiből későbbiekben intuitív ki tudunk indulni. Érdemes lenne olyan példákat találni amelyeken működik a módszer és olyanokat is amelyeken nem, ezáltal össze tudnánk vetni, hogy mi befolyásolhatja a módszer helyességét.
-				
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
 
     %=======================================================
     %
@@ -807,18 +807,18 @@ Miért jó ez a leállási feltétel? Ha csak a Newton-módszer definíciójára
     %								-> 3.3.1 Egy példán keresztül
     %
     %=======================================================
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
+
+
                 \subsection{Egy példán keresztül}
 				Vegyünk egy harmadfokú polinomot és vegyünk olyan kezdőpontot amely elég távol van a gyöktől.
 				\begin{singlespace}
@@ -869,13 +869,13 @@ m =  14.298
 s =  4.9452
 				\end{lstlisting}
 				\end{singlespace}
-                
+
 				\begin{figure}[h]
 					\centering
-					\includegraphics[scale=0.65]{hist.png}
+					\includegraphics[scale=0.65]{kepek/hist.png}
 					\caption{\ref{lst:first}. listázás \ref{lst:hist}. sorának eredménye, amely szemlélteti a véletlen iterációhoz szüksges lépések számának eloszlását, az adott esetben. A piros vonal a Newton-módszer szükséges lépésszámát jelzi $p$-n, a kék vonal $p/p'$-n}\label{k11}
 				\end{figure}
-				
+
 A lépések száma átlagosan megfeleződött, ami egyelőre jó eredménynek tűnik, bár megjegyzem, hogy nem vizsgáltam, hogy minden futtatás elért-e egy gyököt. Ami a hisztogramról elsőre feltűnik, hogy nagyobb a valószínűsége, hogy hamar véget ér az iteráció, és egyszer sem volt gyorsabb mint a két iterációs lépésből a gyorsabb külön futtatva, viszont előfordult, hogy lassabb mint a lassabb iteráció. Persze ebből még ne vonjunk le semmit. Futtassuk le a fenti kódokat egy távoli komplex kezdőponttal: $x_0=20000-10000i$
 				\begin{singlespace}
                 \begin{lstlisting}[caption=Eredmény]
@@ -885,7 +885,7 @@ m =  14.319
 s =  4.9417
 				\end{lstlisting}
                 \end{singlespace}
-				Az első két sor a Newton-módszer eredménye, a harmadik, negyedik a véletlen iterációé. Az előzőtől lényeges különbséget egyelőre nem látunk, érdemes lenne sokkal több pontot egyszerre vizsgálni. 
+				Az első két sor a Newton-módszer eredménye, a harmadik, negyedik a véletlen iterációé. Az előzőtől lényeges különbséget egyelőre nem látunk, érdemes lenne sokkal több pontot egyszerre vizsgálni.
 
 				Nézzük meg a véletlen iteráció milyen eloszlásban iterált a gyökökhöz.
                 \begin{singlespace}
@@ -903,7 +903,7 @@ for j=1:(1e+4)
 	end
 end
 y/1e+4 % vagy abrzolashoz: x=1:n; bar(x,y/1e+4);
-				\end{lstlisting} 
+				\end{lstlisting}
                 \end{singlespace}
 				A GNU Octave beépített függvényével kiszámolom a polinom gyökeit (ami egyébként a Frobenius kísérő mátrix sajátértékeivel határozza meg őket), majd elvégzem 10000-szer a véletlen iterációt, és eltárolom melyik esetben melyik gyökhöz konvergált a módszer. Végül pedig kiszámolom a relatív gyakoriságokat.
 				\begin{singlespace}
@@ -913,10 +913,10 @@ ans =
    0   0   1   0
 				\end{lstlisting}
                 \end{singlespace}
-                Az eredmény szerint a módszer 1 valószínűséggel tart a 3. gyökhöz, ami az $1+0i$. Ez azt jelenti, hogy az előzőekben kapott eredményeknél, de legalábbis a komplex kezdőpontnál, a véletlen iteráció mindig elérte a gyököt, ami ráadásul nem egyezik meg a Newton-módszer által megtalált gyökkel. A 4. elem annak a relatív gyakorisága, hogy nem konvergál a módszer. 
+                Az eredmény szerint a módszer 1 valószínűséggel tart a 3. gyökhöz, ami az $1+0i$. Ez azt jelenti, hogy az előzőekben kapott eredményeknél, de legalábbis a komplex kezdőpontnál, a véletlen iteráció mindig elérte a gyököt, ami ráadásul nem egyezik meg a Newton-módszer által megtalált gyökkel. A 4. elem annak a relatív gyakorisága, hogy nem konvergál a módszer.
 
 				Az előző példákra egy általánosabb módszert is felépíthetünk, amely egy polinomnál egyszerre több pontból is megvizsgálja, hogy konvergál-e a módszer és átlagosan milyen gyorsan. Továbbá érdekes lehet a véletlen iteráció és az eredeti módszerek konvergencia sebességének összefüggése, mint minden véletlen iteráció konvergencia sebessége lassabb mint valamelyik módszeré, vagy van-e esély arra, hogy ahonnan semelyik módszer nem konvergált, ott a véletlen iteráció igen.
-				
+
 				A következőkben a \ref{Konvergencia}. függelékben ismertetett függvénnyel szemléltetem az adott polinomon a véletlen iteráció jóságát.
 				\begin{singlespace}
                 \begin{lstlisting}[caption=Bemenet,escapeinside={@}{@},label={lst:piter}]
@@ -926,37 +926,37 @@ ans =
 				\end{lstlisting}
                 \end{singlespace}
 				A hívott program az adott polinomhoz készít egy szemléltető ábrát a $\{a+bi:a\in[-20,30],\,b\in[-25,25]\}$ komplex számhalmazon az adott módszerekhez. Bár ez a halmaz nem tartalmaz a gyöktől távoli számokat, mégis érdekesebbnek tűnt ezen összehasonlítást végezni. Az első ábra a sikeresen gyökhöz ért iterációk számát szemlélteti. Ez az első két esetben 0 vagy 1, így csak az utolsó esetben érdekes, ahol a véletlen változó miatt előfordulhat, hogy egy pontból egyszer konvergens a módszer, egyszer nem, itt 100 ismétlést végzünk. A második ábra a sikeres esetekhez szükséges iterációs lépések számát mutatja. A listázás három sorával mindkét ábrát kirajzoljuk mindegyik módszerhez $100\cdot 100$ kezdőpontból indulva.
-				
+
 				\begin{figure}[h]
 					\centering
-					\includegraphics[scale=0.7]{p-iter1.png}
+					\includegraphics[scale=0.7]{kepek/p-iter1.png}
 					\caption{\ref{lst:piter}. listázás \ref{lst:piter1}. sorának eredménye, amely szemlélteti a Newton-módszer konvergenciáját az adott polinomon, és az ahhoz szükséges lépések számát. A módszer mind a $100\cdot 100$ kezdőpontból konvergens volt} \label{fig:piter1}
 				\end{figure}
-				
+
 				\begin{figure}[h]
 					\centering
-					\includegraphics[scale=0.7]{p-iter2.png}
+					\includegraphics[scale=0.7]{kepek/p-iter2.png}
 					\caption{\ref{lst:piter}. listázás \ref{lst:piter2}. sorának eredménye, amely szemlélteti a Newton-módszer konvergenciáját a $p/p'$ egyenleten, és az ahhoz szükséges lépések számát. A módszer mind a $100\cdot 100$ kezdőpontból konvergens volt.} \label{fig:piter2}
 				\end{figure}
-				
+
 				Láthatjuk, hogy a különböző egyenletekre futtatott Newton-módszer (\ref{fig:piter1}. ábra és \ref{fig:piter2}. ábra) máshol éri el a kritikusabb, lassabb pontjait. Amik a gyökök vonzási tartományának határain helyezkednek el.
-				
+
 				\begin{figure}[h]
 					\centering
-					\includegraphics[scale=0.7]{p-iter3.png}
+					\includegraphics[scale=0.7]{kepek/p-iter3.png}
 					\caption{\ref{lst:piter}. listázás \ref{lst:piter3}. sorának eredménye, amely szemlélteti a véletlen iteráció konvergenciáját az adott polinomon, és az ahhoz szükséges lépések átlagos számát. A módszer $100\cdot 100$ kezdőpontból indulva pár pontból nem konvergált minden esetben, de a legrosszabb esetben is $0,\!92$ valószínűséggel igen. Cserébe a leglassabb esetben is átlagosan $17$ lépés alatt megtalált egy gyököt.} \label{fig:piter3}
 				\end{figure}
-				
+
 				Bár előfordulhat, hogy a képek alapján nem megfelelő következtetéseket vonunk le, érdemes szemügyre venni az eredményeket mielőtt az adatokkal foglalkoznánk. Ami feltűnő, hogy a véletlen iterációnak a leglassabb esetében is átlagosan csak 17 iterációs lépésre volt szüksége, míg a különböző egyenletekre külön néhol 30 fölé emelkedik ez a szám. Ha a felosztást finomítjuk az ábrákon látható tendencia mentén megtalálna olyan kezdőpontokat, ahonnan lassabb az iteráció, míg a véletlen iteráció esetén a máshol elhelyezkedő kritikus kezdőpontok miatt a szükséges lépések száma, meglátásom szerint, nem fog lényegesen megnőni. Viszont megfigyelhető, hogy a \ref{fig:piter1}. és \ref{fig:piter2}. ábráktól eltérően itt az ábra nagy része világos, vagyis a pontok nagy részénél szükség is volt 13-17 lépésre, míg a különálló módszereknél a 10 lépéshez tartozó árnyalatok dominálnak.
 
 				\ref{app:megj}. megjegyzés alapján rajzoljuk ki a véletlen iterációhoz szükséges lépések számának minimumát és maximumát. (\ref{img:megj}. ábra)
-				
+
 				\begin{figure}[hp]
 					\centering
-					\includegraphics[scale=0.7]{p-iter3_2.png}
+					\includegraphics[scale=0.7]{kepek/p-iter3_2.png}
 					\caption{A két ábra nem tartalmazza a sikeres iterációk számát, mivel azok megegyeznek a \ref{fig:piter3}. ábrán találhatóval. A bal oldali ábra a szükséges iterációs lépések minimumát, a jobb oldali ábra a maximumát szemlélteti.} \label{img:megj}
 				\end{figure}
-				
+
 				A képekből arra következtethetünk, hogyha a módszert nem kellő közelről indítjuk a gyökhöz, akkor a szükséges lépésszám kis valószínűséggel, de akármilyen nagyra megnőhet, hiszen a maximumot szemléltető ábra elég homogénnek tűnik.
 
 				Azt, hogy az adott pontokból indított véletlen iteráció milyen eloszlásban iterál a gyökökhöz szintén egy ábrával a legegyszerűbb szemléltetnünk. Az ehhez szükséges programot a \ref{Konvergencia}. függelékben részletezem. Ez a Newton-módszernél a gyökökhöz tartozó vonzási tartományok megfelelője a véletlen iterációnál.
@@ -965,15 +965,15 @@ ans =
 KonvergenciaAbraKomplex(p,-20-25i,30+25i,100,100,3)
 				\end{lstlisting}
 				\end{singlespace}
-                
+
 				\begin{figure}[ht]
 					\centering
-					\includegraphics[scale=0.65]{Konv2.png}
+					\includegraphics[scale=0.65]{kepek/Konv2.png}
 					\caption{\ref{lst:konvabra}. listázás eredménye. Adott gyökhöz tartozó ábra minél világosabb egy adott pontban, annál többször konvergál a véletlen iteráció hozzá. Míg a véletlenül kiválasztott kezdőpontunknál véletlenül 1 valószínűséggel konvergált egy adott gyökhöz a módszer, itt látható, hogy ez nincs mindig így.} \label{fig:konv_el}
 				\end{figure}
-				
+
 				Bár az eredmény a \ref{fig:konv_el}. ábrán érdekes szabályosságot mutat, sok mindent erről a részletesebb ábráról sem tudunk megállapítani. Feltünő viszont, hogy a valós gyökhöz mennyivel többször konvergál a módszer.
-				
+
 				Amennyiben a \ref{lst:iter}. program által generált adatokat nem kirajzoljuk, hanem egy változóba mentjük, úgy további elemzéseket tudunk végrehajtani. Legyen \ref{lst:piter}. listázás  eredménye a \texttt{zs} változóba mentve a következőképpen. \texttt{zs} 6 db mátrixot tartalmaz. Az első mátrix (\texttt{zs(:,:,1)}) a Newton-módszerhez szükséges lépések száma, a második a Newton-módszerhez szükséges lépések száma $p/p'$ egyenleten, a harmadik a véletlen iterációhoz szükséges lépések számának minimuma, negyedik az átlaga, ötödik a maximuma.
 
 				Vizsgáljuk meg lehet-e a véletlen iteráció gyorsabb, mint valamelyik egyenleten alkalmazott Newton-módszer.
@@ -990,17 +990,17 @@ shading flat;
 sum(sum(t))/10000
 				\end{lstlisting}
                 \end{singlespace}
-				Ezzel kirajzoltuk, hogy hol, és megszámoltuk, hogy milyen arányban lett a véletlen iteráció gyorsabb mindkét eljárásnál. 
+				Ezzel kirajzoltuk, hogy hol, és megszámoltuk, hogy milyen arányban lett a véletlen iteráció gyorsabb mindkét eljárásnál.
 				\begin{singlespace}
                 \begin{lstlisting}[caption= Eredm\'eny]
 ans =  0.32470
 				\end{lstlisting}
                 \end{singlespace}
 				Ez egész jó eredmény, de figyelembe kell venni, hogy minden pontban 100 futtatásnak a minimumát vettük, vagyis nem azt jelenti, hogy 1/3 az esélyünk arra, hogy gyorsabb lesz a módszerünk az adott síkrészen.
-				
+
 				\begin{figure}[h]
 					\centering
-					\includegraphics[scale=0.35]{min.png}
+					\includegraphics[scale=0.35]{kepek/min.png}
 					\caption{\ref{lst:min}. listázás eredménye. A fehér mezőkben található komplex számokból indított véletlen iterációk gyorsabbak lettek mint külön-külön alkalmazva az első és második iterációs lépéseket. Ami nem egyezik meg a \ref{k11}. ábra alapján várt eredménnyel. Ezek a pontok a adott síkrészen a $100\cdot100$ pontnak a $32,\!47\%$-át teszik ki.}
 				\end{figure}
 
@@ -1019,7 +1019,7 @@ sum(sum(t))/10000
                 \end{singlespace}
 				Eszerint a hivatkozott eredmény félrevezető volt. Vizsgáljuk meg, hogy mikor fordul elő, hogy a lassabb iterációs lépéshez közelít az átlag.
 		        \begin{singlespace}
-                \begin{lstlisting}[caption=Bemenet,label=lst:feltP]		
+                \begin{lstlisting}[caption=Bemenet,label=lst:feltP]
 A=abs(min(zs(:,:,1),zs(:,:,2))-zs(:,:,4))<abs(max(zs(:,:,1),zs(:,:,2))-zs(:,:,4));
 t=max(zs(:,:,1),zs(:,:,2))-min(zs(:,:,1),zs(:,:,2));
 x=1:23;
@@ -1034,14 +1034,14 @@ plot(x,y)
                 \end{lstlisting}
                 \end{singlespace}
                 Megnéztük, hogy mi a valószínűsége annak, hogy a minimumtól való távolság kisebb mint a maximumtól való távolság, feltéve, hogy a minimum és a maximum távolsága nagyobb mint $x$, ahol $x\in [1,23]$ egész szám. Ezt minden $x$-re kirajzoltuk.
-                
+
                 \begin{figure}[h]
 					\centering
-					\includegraphics[scale=0.7]{feltP.png}
+					\includegraphics[scale=0.7]{kepek/feltP.png}
 					\caption{\ref{lst:feltP}. listázás eredménye, mely azt ábrázolja, hogy adott $x$-re mekkora a feltételes valószínűsége, hogyha az első és második iterációs lépéshez szükséges lépésszámok különbsége nagyobb mint $x$, akkor a véletlen iterációhoz szükséges lépésszámok átlaga a gyorsabb iterációs lépésnek a szükséges lépésszámához van közel. Az ábra szerint $x=15$-től ennek feltételes valószínűsége 1.}
 				\end{figure}
-				
-				Eszerint ez a tendencia a gyöktől távol vagy megváltozik, vagy az először véletlenül kiválasztott pontunk éppen olyan pont volt, ahol a két iterációs lépéshez szükséges lépésszám között elég nagy volt a különbség. Valószínűnek tartom, hogy mindkettő igaz, és a megváltozott tendencia nem más, mint a gyöktől távol a két iterációs lépéshez szükséges lépésszám egymástól való eltávolodása, ami egyébként intuitív logikus, hiszen két különböző iterációs lépés miért lenne mindenhonnan nagyjából ugyanolyan gyors. 
+
+				Eszerint ez a tendencia a gyöktől távol vagy megváltozik, vagy az először véletlenül kiválasztott pontunk éppen olyan pont volt, ahol a két iterációs lépéshez szükséges lépésszám között elég nagy volt a különbség. Valószínűnek tartom, hogy mindkettő igaz, és a megváltozott tendencia nem más, mint a gyöktől távol a két iterációs lépéshez szükséges lépésszám egymástól való eltávolodása, ami egyébként intuitív logikus, hiszen két különböző iterációs lépés miért lenne mindenhonnan nagyjából ugyanolyan gyors.
 
 
 
@@ -1081,14 +1081,14 @@ plot(x,y)
 IteracioAbraKomplex(poly([1,-0.5-0.33i,-0.5+0.33i]),-0.2-0.2i,0.2+0.2i,100,100,3)
                 \end{lstlisting}
                 \end{singlespace}
-                A $p(x) = (x-1)(x+0,\!5+0,\!33i)(x+0,\!5-0,\!33i)$ polinomot az egyszerűség kedvéért ugyanazon a halmazon ábrázoltam mint \ref{img:div}. ábrán. 
-                
+                A $p(x) = (x-1)(x+0,\!5+0,\!33i)(x+0,\!5-0,\!33i)$ polinomot az egyszerűség kedvéért ugyanazon a halmazon ábrázoltam mint \ref{img:div}. ábrán.
+
                			 \begin{figure}[h!]
 					\centering
-					\includegraphics[scale=0.7]{erdekes.png}
+					\includegraphics[scale=0.7]{kepek/erdekes.png}
 					\caption{\ref{erdekes1}. listázás eredménye, melyről látható, hogy a véletlen iteráció olyan helyről is konvergálhat, ahol az első iterációs lépés nem.}
 				\end{figure}
-                
+
                 \begin{singlespace}
                 \begin{lstlisting}[caption=Bemenet,label=erdekes2]
 IteracioAbraKomplex(poly([1,3,5+j]),0,5+5j,100,1,2)
@@ -1098,12 +1098,12 @@ IteracioAbraKomplex(poly([1,3,5+j]),0,5+5j,100,100,3)
                 Ábrázoljunk a $p(x)=(x-1)(x-3)(x-5-i)$ polinomot a $\{a+bi : a,b\in [0,5]\}$ síkrészen, ahol a második iterációs lépés egy nagyobb ponthalmazon divergens, és nézzük meg ugyanitt a véletlen iteráció 100 futtatásából a sikeres iterációk számát és a szükséges lépések számának átlagát. (\ref{atcsuszokep}. ábra)
                 			\begin{figure}[h]
 					\centering
-					\subfigure[Az második iterációs lépéssel]{\includegraphics[scale=0.7]{erdekes2.png}}
-					\subfigure[A véletlen iterációval]{\includegraphics[scale=0.7]{erdekes3.png}}
+					\subfigure[Az második iterációs lépéssel]{\includegraphics[scale=0.7]{kepek/erdekes2.png}}
+					\subfigure[A véletlen iterációval]{\includegraphics[scale=0.7]{kepek/erdekes3.png}}
 			        \caption{\ref{erdekes2}. listázás eredménye, melyről látható, hogy a véletlen iteráció olyan helyről is konvergálhat, ahol a második iterációs lépés nem.}\label{atcsuszokep}
 				\end{figure}
-                
-				
+
+
 
 
 
@@ -1123,7 +1123,7 @@ IteracioAbraKomplex(poly([1,3,5+j]),0,5+5j,100,100,3)
     %								|
     %								-> 3.3.3 Ellenpélda
     %
-    %=======================================================      
+    %=======================================================
 
 
 
@@ -1134,7 +1134,7 @@ IteracioAbraKomplex(poly([1,3,5+j]),0,5+5j,100,100,3)
 
 			\subsection{Ellenpélda}
                 Az előzőekben bemutattunk egy példát, amin a véletlen iteráció viszonylag jól viselkedett, azonban könnyen találhatunk olyan példát, ahol a módszer meglehetősen rosszul viselkedik. A következőkben egy ilyet vizsgálunk.
-                
+
                 Vegyük az $x^3-1$ polinomot, melyet korábban már ábrázoltam a \ref{k10}. ábrán. Ennek gyökei a következők: $1, -1/2+i\sqrt{3}/2, -1/2-i\sqrt{3}/2$. Ez a gyökök elhelyezkedését nézve hasonló az előzőekben vizsgált polinomhoz, azonban itt a gyökök a komplex síkon egy szabályos háromszög csúcsain helyezkednek el. E hasonlóság miatt érdekes összehasonlítani a két példát.
                 \begin{singlespace}
                 \begin{lstlisting}[caption=Bemenet,label=str:ellen1]
@@ -1146,13 +1146,13 @@ IteracioAbraKomplex(p,-5-5i,5+5i,100,1,2)
                 Lefuttatjuk a már ismert programunkat amely kirajzolja a szükséges iterációs lépések számát az adott módszerekhez a $\{a+bi:a,b\in[-5,5]\}$ síkrészen.
                            \begin{figure}[hp]
 					\centering
-					\subfigure[Az első iterációs lépéssel]{\includegraphics[scale=0.6]{ellenpelda2.png}}
-					\subfigure[A második iterációs lépéssel]{\includegraphics[scale=0.6]{ellenpelda1.png}}
+					\subfigure[Az első iterációs lépéssel]{\includegraphics[scale=0.6]{kepek/ellenpelda2.png}}
+					\subfigure[A második iterációs lépéssel]{\includegraphics[scale=0.6]{kepek/ellenpelda1.png}}
 			        \caption{\ref{str:ellen1}. listázás eredménye}
-				\end{figure}       
+				\end{figure}
 		    \begin{figure}[hp]
 					\centering
-					\includegraphics[scale=0.6]{veletlen.png}
+					\includegraphics[scale=0.6]{kepek/veletlen.png}
 					\caption{\ref{lst:ellen2}. listázás eredménye, mely azt ábrázolja, hogy melyik komplex számból melyik gyökhöz hányszor konvergált a véletlen iteráció. Látható a különbség \ref{fig:konv_el}. ábrától. Míg a jelenlegi ábrán minden gyökhöz azonos ábra tartozik egy megfelelő 120 fokos forgatás erejéig, addig a másik ábrán a valós gyök magához vonzotta azokat az iterációkat amik most az egyéb halmazba estek.}
 				\end{figure}
                 Láthatjuk, hogy a két iterációs lépés külön-külön minden vizsgált kezdőpontból konvergens volt, azonban a véletlen iterációnál ez megváltozik.
@@ -1162,7 +1162,7 @@ KonvergenciaAbraKomplex(p,-5-5i,5+5i,100,100,3)
                 \end{lstlisting}
                 \end{singlespace}
                 Kirajzoljuk a gyökökhöz tartozó vonzási tartományok véletlen iterációhoz tartozó megfelelőjét.
-                
+
 
 
 Az eredmény az eddigiek alapján meglepő lehet, hiszen a polinomunkon a véletlen iteráció annak három gyökéhez közeli intervallumon is már rosszabbul viselkedik mint azt elvárnánk, ráadásul egy olyan polinomon, aminek gyökei hasonlóan helyezkedtek el egymáshoz viszonyítva, a módszer meglehetősen jól viselkedett. A különbség az volt, hogy az előző polinomunk gyökei nem egy szabályos háromszögben helyezkedtek el a komplex síkon, míg most igen. Felvetődik tehát a kérdés, hogy vajon a szabályos háromszöggel van-e a baj, és ha igen akkor miért rontja el a módszerünket.
@@ -1208,7 +1208,7 @@ A program $4$ valós számot generál $-10$ és $10$ között, amiből létrehoz
 ans = 0
                 \end{lstlisting}
                 \end{singlespace}
-Látható, ha céltudatosan olyan polinomot generálunk amelynek gyökei a komplex síkon szabályos háromszögként helyezkednek el, akkor ez az eredmény nemcsak drasztikusan lecsökken, de egyenesen egy ilyen típusú polinomra sem volt konvergens minden esetben amikor futtattuk rajta a módszert. Persze ez egy erős feltétel, de láthatjuk, hogy a véletlenszerűen elhelyezkedő gyököknél ekkor is magas volt a százalék. Ha a 6. sort átírjuk a következőre: 
+Látható, ha céltudatosan olyan polinomot generálunk amelynek gyökei a komplex síkon szabályos háromszögként helyezkednek el, akkor ez az eredmény nemcsak drasztikusan lecsökken, de egyenesen egy ilyen típusú polinomra sem volt konvergens minden esetben amikor futtattuk rajta a módszert. Persze ez egy erős feltétel, de láthatjuk, hogy a véletlenszerűen elhelyezkedő gyököknél ekkor is magas volt a százalék. Ha a 6. sort átírjuk a következőre:
 \begin{singlespace}
 \begin{lstlisting}[firstnumber=6]
 if sum(sum(x))>=10^3*0.5
@@ -1283,7 +1283,7 @@ Ezáltal úgy sejtjük, hogy ha a egy polinom gyökei szabályos sokszögként h
 
 
 \chapter{Összefoglalás}
-Dolgozatom során egy olyan iterációs módszer vizsgálatával foglalkoztam, amely véletlenszerűen lép két iterációs lépés segítségével. A két iterációs lépés igazából nem más, mint az egyenletünkön, és annak egy olyan módosításán végzett iterációs módszer, amelynek gyökei megegyeznek az eredeti egyenletünkével. Ennek a koncepciónak azt a speciális esetét vizsgáltam amikor a két egyenleten a Newton-módszert hajtom végre. Ehhez szükség volt a Newton-módszer alapos bemutatására és megismerésére. 
+Dolgozatom során egy olyan iterációs módszer vizsgálatával foglalkoztam, amely véletlenszerűen lép két iterációs lépés segítségével. A két iterációs lépés igazából nem más, mint az egyenletünkön, és annak egy olyan módosításán végzett iterációs módszer, amelynek gyökei megegyeznek az eredeti egyenletünkével. Ennek a koncepciónak azt a speciális esetét vizsgáltam amikor a két egyenleten a Newton-módszert hajtom végre. Ehhez szükség volt a Newton-módszer alapos bemutatására és megismerésére.
 
 A második fejezet során láthattuk, hogy a Newton-módszer milyen egyszerű koncepción alapszik, és ha bizonyos feltételek teljesülnek és a módszer konvergens, akkor a módszer másodrendben tart a gyökhöz. Megállapítottuk, milyen feltételek szükségesek a konvergenciához, és azt is, hogy bizonyos feltételekkel monoton konvergenciát tudunk biztosítani. Megvizsgáltuk, a komplex gyökökkel rendelkező egyenletekre mi a geometriai meggondolás, melyből kiderült, hogy a Newton-módszer egy gradiens módszer $|f|$ abszolút érték függvényre nézve. A komplex síkon minden gyökhöz tartozik egy vonzási tartomány, melyek másodfokú polinomok esetén két félsíkot, magasabb fokú polinomok és egyéb komplex differenciálható függvények esetén különböző fraktálokat határoznak meg.
 
@@ -1309,21 +1309,21 @@ A következőkben a módszerünket polinomokra specializáltuk, amelyeknél a m�
     %				A dolgozatban használt programok bemutatása
 	%
 	%=======================================================
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
 	\chapter{A dolgozatban használt programok bemutatása} \label{Appendix}
 		A dolgozatban felhasznált programok GNU Octave nyelven íródtak ami egy ingyenes MATLAB klón, ezáltal a következő programok jó eséllyel lefutnak MATLAB-ban, viszont előfordulhatnak kisebb kompatibilitási hibák. Ezeket azonban általában könnyen és hamar ki lehet küszöbölni. További probléma, hogy az említett programnyelvek lassan kezelik a \texttt{for} ciklusokat, helyette a műveletek vektorokkal való megoldását javasolják. Az alábbi programok több egymásba ágyazott \texttt{for} ciklust használnak, ezáltal meglehetősen lassúak lehetnek.
-		
-        
+
+
 
 
 
@@ -1346,73 +1346,73 @@ A következőkben a módszerünket polinomokra specializáltuk, amelyeknél a m�
     %					|
     %					->	A.1 A felhasznált módszerek megvalósítása
     %
-    %=======================================================   
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    %=======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		\section{A felhasznált módszerek megvalósítása} \label{Newton}
 			\begin{singlespace}
             \begin{lstlisting}[caption=Newton.m]
 function [gyok it]=Newton(p,x0,seq=0,m=1,h=0.001,maxit=100,prob=0.5)
-    x(1)=x0;                                                        
-    pd=polyder(p);                                                  
-    pdd=polyder(pd);                                                
-    if m==3                                                         
-        r=1;                                                        
-    else                                                            
-        r=0;                                                        
-    end                                                             
-    for i=2:(maxit+1)                                               
-        px=polyval(p,x(i-1));                                       
-        pdx=polyval(pd,x(i-1));                                     
-        if r==1                                                     
-            if(rand>prob)                                           
-                m=1;                                                
-            else                                                    
-                m=2;                                                
-            end                                                     
-        end                                                         
-                                                                    
-        if m==1                                                     
-            if pdx==0                                               
-                i=i-1;                                              
-                break;                                              
-            end                                                     
-            x(i)=x(i-1)-px/pdx;                                     
-        elseif m==2                                                 
-            pddx=polyval(pdd,x(i-1));                               
-            if pdx^2-pddx*px==0                                     
-                i=i-1;                                              
-                break;                                              
-            end                                                     
-            x(i)=x(i-1)-(px*pdx)/(pdx^2-pddx*px);                   
-        end                                                         
-                                                                    
-        if ( abs(x(i)-x(i-1)) < h*abs(x(i)) )                       
-            break;                                                  
-        end                                                         
-    end                                                             
-    it=i-1;                                                         
-    if seq==0                                                       
-        gyok=x(i);                                                  
-    else                                                            
-        gyok=x;                                                     
-    end                                                             
+    x(1)=x0;
+    pd=polyder(p);
+    pdd=polyder(pd);
+    if m==3
+        r=1;
+    else
+        r=0;
+    end
+    for i=2:(maxit+1)
+        px=polyval(p,x(i-1));
+        pdx=polyval(pd,x(i-1));
+        if r==1
+            if(rand>prob)
+                m=1;
+            else
+                m=2;
+            end
+        end
+
+        if m==1
+            if pdx==0
+                i=i-1;
+                break;
+            end
+            x(i)=x(i-1)-px/pdx;
+        elseif m==2
+            pddx=polyval(pdd,x(i-1));
+            if pdx^2-pddx*px==0
+                i=i-1;
+                break;
+            end
+            x(i)=x(i-1)-(px*pdx)/(pdx^2-pddx*px);
+        end
+
+        if ( abs(x(i)-x(i-1)) < h*abs(x(i)) )
+            break;
+        end
+    end
+    it=i-1;
+    if seq==0
+        gyok=x(i);
+    else
+        gyok=x;
+    end
 			\end{lstlisting}
             \end{singlespace}
 			A listázott program végzi minden felhasznált programban a Newton-módszert egy adott polinomra és annak módosított egyenletére, és a módosított módszert is.
-			        
+
             A bemeneti változók:
 			\begin{enumerate}
 				\item[p:] Adott polinom együtthatói vektorként, ahol a legnagyobb kitevő együtthatója az első elem, és utána a sorban a többi.
@@ -1444,60 +1444,60 @@ function [gyok it]=Newton(p,x0,seq=0,m=1,h=0.001,maxit=100,prob=0.5)
     %					|
     %					->	A.2 Konvergencia szemléltetése
     %
-    %=======================================================   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    %=======================================================
+
+
+
+
+
+
+
+
+
+
 
 
 		\section{Konvergencia szemléltetése} \label{Konvergencia}
 			\begin{singlespace}
             \begin{lstlisting}[caption=IteracioAbraKomplex.m,escapeinside={@}{@},label=lst:iter]
-function IteracioAbraKomplex(p,a,b,f,ism,m=3,h=0.001)                               
+function IteracioAbraKomplex(p,a,b,f,ism,m=3,h=0.001)
     [x y]=meshgrid(linspace(real(a),real(b),f),linspace(imag(a),imag(b),f));
-    r=roots(p);                                                             
-    n=length(r)+1;                                                          
-    z=zeros(f,f);                                                           
-    zs=zeros(f,f);                                                          
-    it_temp=zeros(ism);                                                     
-    for k=1:f                                                               
-        for l=1:f                                                           
-            temp=0;                                                         
-            for i=1:ism                                                     
-                [gyok,it]=Newton(p,x(k,l)+y(k,l)*j,0,m,h,60);               
-                [MINE MINH]=min(abs(r-gyok));                               
-                if MINE<h                                                   
-                    z(k,l)=z(k,l)+1;                                        
-                    temp=temp+1;                                            
-                    it_temp(temp)=it;                                       
-                end                                                         
-            end                                                             
-            if temp!=0                                                      
-@\label{lst:mean}@                zs(k,l)=mean(it_temp(1:temp)); 
-            else                                                            
-                zs(k,l)=0;                                                  
-            end                                                             
-        end                                                                 
-    end                                                            
-    figure                                                                  
-    subplot(1,2,1)                                                          
-    pcolor(x,y,z)                                                           
-    colorbar;                                                               
-    colormap hot;                                                           
-    shading interp;                                                         
-    axis equal tight;                                                       
-    subplot(1,2,2)                                                          
-    pcolor(x,y,zs)                                                          
-    colorbar;                                                               
-    colormap hot;                                                           
-    shading interp;                                                         
+    r=roots(p);
+    n=length(r)+1;
+    z=zeros(f,f);
+    zs=zeros(f,f);
+    it_temp=zeros(ism);
+    for k=1:f
+        for l=1:f
+            temp=0;
+            for i=1:ism
+                [gyok,it]=Newton(p,x(k,l)+y(k,l)*j,0,m,h,60);
+                [MINE MINH]=min(abs(r-gyok));
+                if MINE<h
+                    z(k,l)=z(k,l)+1;
+                    temp=temp+1;
+                    it_temp(temp)=it;
+                end
+            end
+            if temp!=0
+@\label{lst:mean}@                zs(k,l)=mean(it_temp(1:temp));
+            else
+                zs(k,l)=0;
+            end
+        end
+    end
+    figure
+    subplot(1,2,1)
+    pcolor(x,y,z)
+    colorbar;
+    colormap hot;
+    shading interp;
+    axis equal tight;
+    subplot(1,2,2)
+    pcolor(x,y,zs)
+    colorbar;
+    colormap hot;
+    shading interp;
     axis equal tight;
 			\end{lstlisting}
             \end{singlespace}
@@ -1513,7 +1513,7 @@ function IteracioAbraKomplex(p,a,b,f,ism,m=3,h=0.001)
 			\end{enumerate}
 			\begin{Megj}\label{app:megj}
 				Az generált ábrából egy kevés módosítással más információt is kinyerhetünk. A \ref{lst:mean}. sorban a \texttt{mean} függvényt helyettesíthetjük különböző statisztikai függvényekkel mint a \texttt{min}, \texttt{max}, vagy az \texttt{std} függvénnyel mely szórást számol.
-			\end{Megj} 
+			\end{Megj}
 			\begin{singlespace}
             \begin{lstlisting}[caption=KonvergenciaAbraKomplex.m]
 function KonvergenciaAbraKomplex(p,a,b,f,ism,m=3,h=0.001)
@@ -1559,14 +1559,14 @@ function KonvergenciaAbraKomplex(p,a,b,f,ism,m=3,h=0.001)
 % irodalomjegyzék
 	\begin{thebibliography}{99}
 	\addcontentsline{toc}{chapter}{Irodalomjegyzék}
-    	\bibitem{jr} E. T. Whittaker, G. Robinson, ``The Newton-Raphson Method'' \emph{The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed.}, New York: Dover, pp. 84-87, 1967. 
+    	\bibitem{jr} E. T. Whittaker, G. Robinson, ``The Newton-Raphson Method'' \emph{The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed.}, New York: Dover, pp. 84-87, 1967.
 		\bibitem{aa} Faragó István, \emph{Alkalmazott analízis 1}, előadás jegyzet 2012.
         \bibitem{na} Faragó István, Horváth Róbert, ``Nemlineáris egyenletek és egyenletrendszerek megoldása'' \emph{Numerikus módszerek}, Typotex 2011.
         \bibitem{Yau98} Lily Yau, Adi Ben-Israel ``The Newton and Halley Methods for Complex Roots'', \emph{The American Mathematical Monthly} Vol. 105, No. 9, November 1998. % http://folk.uib.no/ssu029/Pdf_file/Yau98.pdf
 		\bibitem{calculus} P.D. Straffin, C.C.T. Benson, \emph{Calculus Problems for a New Century}, Mathematical Association of America 1993.
 	\bibitem{div} William J. Gilbert, ``Generalizations of Newton's method'', \emph{Fractals} Vol. 9, No. 3,  Szeptember 2001.
 	\bibitem{vk} Veress Krisztián, \emph{A Newton és Gauss-Newton módszerek alkalmazása egyenletrendszerek megoldására és nemlineáris optimalizálásra} [online], 2007, [2013.05.18.], <http://www.inf.u-szeged.hu/\textasciitilde verkri/bin/newton-gauss.pdf>
-        
+
 	\end{thebibliography}
 
 \chapter*{Nyilatkozat}
